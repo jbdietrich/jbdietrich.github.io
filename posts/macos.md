@@ -4,7 +4,7 @@
 
 The `barf` project was built on Linux and was catered towards Linux users. The core of the project will remain focused on Linux/GNU tools, but that doesn't mean MacOS needs to be left out in the cold.
 
-There are some very minor changes you'll need to make in the main `barf` script if you plan to run it on MacOS.
+There are some very minor changes you'll need to make to your default `sed` and `date` paths if you plan to run barf on MacOS.
 
 ## Download Packages
 
@@ -17,20 +17,15 @@ You will need to install the GNU versions of both `date` and `sed` in order to a
     brew install gnu-sed
 
 
-## The Script Tweaks
+## Setting `gsed` and `gdate` as Default
 
-Now open the main `barf` file in your project and replace all instances of `sed` with `gsed`.
+Now run the following in a terminal shell:
 
-Then change the following variable:
+    sudo ln -fs /opt/homebrew/bin/gsed /usr/local/bin/sed
+     sudo ln -fs /opt/homebrew/bin/gdate /usr/local/bin/date
 
+and add the following to your `.bash_profile` file:
 
-    published_date=$(date -d $basic_date +%FT%TZ)
+    export PATH="/usr/local/bin:$PATH"
 
-
-to this:
-
-
-    published_date=$(gdate -d $basic_date +%FT%TZ)
-
-
-After that everything should work perfectly fine. There is probably a cleaner way to do this, but I like to keep things simple.
+Reload your `bash` instance and everything should work as intended!
