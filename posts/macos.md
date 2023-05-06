@@ -22,7 +22,7 @@ You will need to install the GNU versions of both `date` and `sed` in order to a
 Now run the following in a terminal shell:
 
     sudo ln -fs /opt/homebrew/bin/gsed /usr/local/bin/sed
-     sudo ln -fs /opt/homebrew/bin/gdate /usr/local/bin/date
+    sudo ln -fs /opt/homebrew/bin/gdate /usr/local/bin/date
 
 and add the following to your `.bash_profile` file:
 

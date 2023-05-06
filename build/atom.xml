@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 	<title>barf</title>
 	<link href="https://barf.bt.ht/atom.xml" rel="self" />
-	<updated>2023-05-06T12:09:50Z</updated>
+	<updated>2023-05-06T12:10:56Z</updated>
 	<author>
 		<name>Bradley Taunt</name>
 	</author>
@@ -262,7 +262,7 @@ brew install gnu-sed
 &lt;h2&gt;Setting &lt;code&gt;gsed&lt;/code&gt; and &lt;code&gt;gdate&lt;/code&gt; as Default&lt;/h2&gt;
 &lt;p&gt;Now run the following in a terminal shell:&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;sudo ln -fs /opt/homebrew/bin/gsed /usr/local/bin/sed
- sudo ln -fs /opt/homebrew/bin/gdate /usr/local/bin/date
+sudo ln -fs /opt/homebrew/bin/gdate /usr/local/bin/date
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;and add the following to your &lt;code&gt;.bash_profile&lt;/code&gt; file:&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;export PATH=&amp;quot;/usr/local/bin:$PATH&amp;quot;
