@@ -53,7 +53,7 @@ EOF
 		content=$($MARKDOWN "$f" | sed 's/&/\&amp;/g; s/</\&lt;/g; s/>/\&gt;/g; s/"/\&quot;/g; s/'"'"'/\&#39;/g')
 		post_link=$(echo "$f" | sed -E 's|posts/(.*).md|\1|')
 		basic_date=$(echo $(head -3 "$f" | tail -1))
-		published_date=$(date -d $basic_date +%FT%TZ)
+		published_date=$(date -d $basic_date -u +%Y-%m-%dT10:%M:%SZ)
 
 		cat <<EOF
 	<entry>

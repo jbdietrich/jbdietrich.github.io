@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 	<title>barf</title>
 	<link href="https://barf.bt.ht/atom.xml" rel="self" />
-	<updated>2023-03-09T10:53:26Z</updated>
+	<updated>2023-05-05T23:49:39Z</updated>
 	<author>
 		<name>Bradley Taunt</name>
 	</author>
@@ -244,8 +244,8 @@ behaviour, use the &lt;code&gt;-n&lt;/code&gt; flag when executing smu to stricl
 tags.&lt;/p&gt;</content>
 		<link href="https://barf.bt.ht/markdown-examples"/>
 		<id>https://barf.bt.ht/markdown-examples</id>
-		<updated>2023-01-05T00:00:00Z</updated>
-		<published>2023-01-05T00:00:00Z</published>
+		<updated>2023-01-05T10:00:00Z</updated>
+		<published>2023-01-05T10:00:00Z</published>
 	</entry>
 	<entry>
 		<title>Running `barf` on MacOS</title>
@@ -270,8 +270,8 @@ brew install gnu-sed
 &lt;p&gt;After that everything should work perfectly fine. There is probably a cleaner way to do this, but I like to keep things simple.&lt;/p&gt;</content>
 		<link href="https://barf.bt.ht/macos"/>
 		<id>https://barf.bt.ht/macos</id>
-		<updated>2023-01-18T00:00:00Z</updated>
-		<published>2023-01-18T00:00:00Z</published>
+		<updated>2023-01-18T10:00:00Z</updated>
+		<published>2023-01-18T10:00:00Z</published>
 	</entry>
 	<entry>
 		<title>Supporting Basic Dark Mode</title>
@@ -288,7 +288,7 @@ brew install gnu-sed
 &lt;p&gt;Personally, I can&#39;t be bothered to add that extra code to this project. The Safari team needs to get their shit together and fix such a simple bug. Plus, you shouldn&#39;t be using Safari anyway - it&#39;s proprietary garbage.&lt;/p&gt;</content>
 		<link href="https://barf.bt.ht/dark-mode"/>
 		<id>https://barf.bt.ht/dark-mode</id>
-		<updated>2023-03-07T00:00:00Z</updated>
-		<published>2023-03-07T00:00:00Z</published>
+		<updated>2023-03-07T10:00:00Z</updated>
+		<published>2023-03-07T10:00:00Z</published>
 	</entry>
 </feed>
