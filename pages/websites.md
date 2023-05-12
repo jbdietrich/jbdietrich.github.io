@@ -2,5 +2,5 @@
 
 Send an email to brad [at] bt [dot] ht if you would like me to add your barf-generated website to this list.
 
-- [https://bt.ht](bt.ht)
-- [https://hamblingreen.com](hamblingreen.com)
+- [bt.ht](https://bt.ht)
+- [hamblingreen.com](https://hamblingreen.com)
