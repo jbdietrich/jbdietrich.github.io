@@ -1,4 +1,4 @@
-# barf
+<img style="border:0;margin-top:2rem;" src="/public/images/barf.svg" alt="barf logo">
 
 **barf is an extremely minimal blog generator.**
 

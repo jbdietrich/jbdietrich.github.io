@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-	<title>barf</title>
+	<title></title>
 	<link href="https://barf.bt.ht/atom.xml" rel="self" />
-	<updated>2023-05-12T09:50:25Z</updated>
+	<updated>2023-05-15T13:51:52Z</updated>
 	<author>
 		<name>Bradley Taunt</name>
 	</author>
