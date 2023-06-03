@@ -10,7 +10,7 @@ It could *almost* be called "suckless", but probably isn't.
 
 You can see a [live demo here](https://barf.bt.ht)
 
-## Why 'barf'?
+# Why 'barf'?
 
 > **barf**
 >
@@ -18,7 +18,7 @@ You can see a [live demo here](https://barf.bt.ht)
 
 ---
 
-## Core Features
+# Core Features
 
 - Extremely portable
 - Automatic, **valid** RSS generation
@@ -27,16 +27,43 @@ You can see a [live demo here](https://barf.bt.ht)
 
 ---
 
-## Requirements
+# Requirements
+
+`barf` was originally built on and for Linux, but has since been updated to
+include support for both OpenBSD and MacOS out-of-the-box.
+
+## Linux
 
 - rsync
 - smu (see below)
 - entr (optonal)
 - standard UNIX tools
 
+## OpenBSD
+
+Tutorial instructions for OpenBSD coming soon...
+
+- coreutils
+- gcc
+- cmake
+- rsync
+- smu (see below)
+- entr (optional)
+
+## MacOS
+
+Please refer to the [main tutorial on setting up barf on
+MacOS](https://barf.bt.ht/macos)
+
+- coreutils
+- gnu-sed
+- rsync
+- smu (see below)
+- entr (optional)
+
 ---
 
-## Basic Setup
+# Basic Setup
 
 Clone this repo and navigate inside it. Edit the "header.html" and "footer.html" files with your own information, navigation, etc. 
 
@@ -47,8 +74,13 @@ Then, clone and build my patched version of smu:
 ```sh
 git clone https://git.sr.ht/~bt/smu
 cd smu
+# OpenBSD users: change sudo to doas
 sudo make install
 ```
+
+> **Important**: If you are running `barf` on either OpenBSD or MacOs, be sure
+to edit the main `Makefile` and change the `./barf` command under `build` to
+either `./barf_openbsd` or `./barf_macos` respectively.
 
 Then clone this directory and build:
 
@@ -64,7 +96,7 @@ Media (such as images, videos) are placed in the "public" folder and carried ove
 
 ---
 
-## Post Structure
+# Post Structure
 
 The first line of any markdown file inside your `posts` directory should start
 with a h1 heading, then a line break, then the date in `YYYY-MM-DD` format.
@@ -79,29 +111,23 @@ Like so:
 Changing this structure or date format will break things or require you to edit
 the `barf` script accordingly.
 
-## Projects Goals
+# Projects Goals
 
 - The core focus should be to **reduce** the code of this project, not increase it. Overall scope needs to remain small.
 - Major tweaks/add-ons should be run by individuals via forks/patches - not put into the barf base
 
 ---
 
-## Submitting Patches
+# Submitting Patches
 
 Please use the official [mailing list](https://lists.sr.ht/~bt/barf) to submit
 your patches or bug fixes. Thanks!
 
 ---
 
-## Running on MacOS
+# FAQs
 
-Please refer to the [main tutorial on setting up barf on MacOS](https://barf.bt.ht/macos)
-
----
-
-## FAQs
-
-### How do I test locally?
+## How do I test locally?
 
 Inside your project directory run:
 
@@ -110,13 +136,13 @@ make watch
 cd build && python3 -m http.server 3003
 ```
 
-### Do you plan to add "X"? Can *I* add "X"?
+## Do you plan to add "X"? Can *I* add "X"?
 
 Most likely not. I'm happy with how things are currently. If you want to add something - great! The point of this project is to give others the ability to fork it, tweak it, patch it, and share it as much as they'd like. The core of barf will remain minimal for this reason.
 
 Of course, any patches that can help *reduce* the project's footprint or even speed things up are more than welcome!
 
-### Can I use other Markdown parsers?
+## Can I use other Markdown parsers?
 
 Of course! Simply edit the main `barf` script and swap out `smu` with something else. I wouldn't advise doing this if you already have pre-existing content based-off `smu`, since this could break some of your pages.
 
