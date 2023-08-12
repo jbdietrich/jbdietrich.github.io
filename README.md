@@ -47,6 +47,7 @@ Tutorial instructions for OpenBSD coming soon...
 - gcc
 - cmake
 - rsync
+- gsed
 - smu (see below)
 - entr (optional)
 
