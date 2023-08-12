@@ -1,5 +1,5 @@
 build:
-	./barf
+	sh ./barf_openbsd
 	rsync -r public/ build/public
 
 clean:

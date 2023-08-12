@@ -41,7 +41,8 @@ include support for both OpenBSD and MacOS out-of-the-box.
 
 ## OpenBSD
 
-Tutorial instructions for OpenBSD coming soon...
+Please refer to the [main tutorial on setting up barf on
+OpenBSD](https://barf.bt.ht/openbsd)
 
 - coreutils
 - gcc
