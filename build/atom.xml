@@ -2,11 +2,11 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 	<title></title>
 	<link href="https://barf.bt.ht/atom.xml" rel="self" />
-	<updated>2023-08-12T13:49:55Z</updated>
+	<updated>2023-08-13T14:41:53Z</updated>
 	<author>
-		<name>Bradley Taunt</name>
+		<name></name>
 	</author>
-	<id>https://barf.bt.ht,2023-08-12:default-atom-feed/</id>
+	<id>https://barf.bt.ht,2023-01-04:default-atom-feed/</id>
 	<entry>
 		<title>Running `barf` on OpenBSD</title>
 		<content type="html">&lt;h1&gt;Running &lt;code&gt;barf&lt;/code&gt; on OpenBSD&lt;/h1&gt;
