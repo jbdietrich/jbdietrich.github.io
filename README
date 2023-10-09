@@ -80,10 +80,6 @@ cd smu
 sudo make install
 ```
 
-> **Important**: If you are running `barf` on either OpenBSD or MacOs, be sure
-to edit the main `Makefile` and change the `./barf` command under `build` to
-either `./barf_openbsd` or `./barf_macos` respectively.
-
 Then clone this directory and build:
 
 ```sh

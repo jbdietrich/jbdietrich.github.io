@@ -20,12 +20,16 @@ index_html() {
 	# Intro text
 	$MARKDOWN index.md
 
+	echo "<ul>"
+
 	# Posts
 	while read -r f title created; do
 		link=$(echo "$f" | sed -E 's|.*/(.*).md|\1/|')
 		created=$(echo $(head -3 "$f" | tail -1))
-	 	echo "<span class='created'>$created &mdash; <a href=\"$link\">$title</a></span>"
+		echo "<li>$created &middot; <a href=\"$link\">$title</a></li>"
 	done < "$1" | sort -r
+
+	echo "</ul>"
 
 	# Print footer after post list
 	cat footer.html
@@ -84,7 +88,7 @@ write_page() {
 		> "$target" && cat footer.html >> "$target"
 }
 
-rm -fr build && mkdir build
+rm -rf build && mkdir build
 
 # Blog posts
 index_tsv posts | sort -rt "	" -k 3 > build/posts.tsv

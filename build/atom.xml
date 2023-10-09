@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-	<title></title>
+	<title>barf</title>
 	<link href="https://barf.bt.ht/atom.xml" rel="self" />
-	<updated>2023-08-13T14:41:53Z</updated>
+	<updated>2023-10-09T09:32:08Z</updated>
 	<author>
-		<name></name>
+		<name>Bradley Taunt</name>
 	</author>
 	<id>https://barf.bt.ht,2023-01-04:default-atom-feed/</id>
 	<entry>
@@ -16,11 +16,8 @@
 &lt;p&gt;Along with your Markdown parser of choice (&lt;code&gt;barf&lt;/code&gt; assumes you will be using my version of &lt;a href=&quot;https://git.sr.ht/~bt/smu&quot;&gt;smu&lt;/a&gt;) you will also need to install the required packages on your OpenBSD system:&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;doas pkg_add rsync coreutils gsed cmake gcc
 &lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;Then ensure that your Makefile calls the proper &lt;code&gt;barf_openbsd&lt;/code&gt; file:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;build:
-	sh ./barf_openbsd
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;After that, everything should work perfectly fine!&lt;/p&gt;</content>
+&lt;p&gt;Then ensure that you alter all instances of &lt;code&gt;sed&lt;/code&gt; with &lt;code&gt;gsed&lt;/code&gt; in the core &lt;code&gt;barf&lt;/code&gt; file. (Or make an alias if you&#39;d prefer not to alter the main file)&lt;/p&gt;
+&lt;p&gt;After that, everything should work perfectly fine when building!&lt;/p&gt;</content>
 		<link href="https://barf.bt.ht/openbsd"/>
 		<id>https://barf.bt.ht/openbsd</id>
 		<updated>2023-08-12T10:00:00Z</updated>
@@ -309,5 +306,30 @@ sudo ln -fs /opt/homebrew/bin/gdate /usr/local/bin/date
 		<id>https://barf.bt.ht/dark-mode</id>
 		<updated>2023-03-07T10:00:00Z</updated>
 		<published>2023-03-07T10:00:00Z</published>
+	</entry>
+	<entry>
+		<title>Cleaning Up barf's Structure</title>
+		<content type="html">&lt;h1&gt;Cleaning Up barf&#39;s Structure&lt;/h1&gt;
+&lt;p&gt;2023-10-09&lt;/p&gt;
+&lt;p&gt;Things probably look a little different around here. Both in terms of this demo site &lt;em&gt;and&lt;/em&gt; the core &lt;code&gt;barf&lt;/code&gt; files itself.&lt;/p&gt;
+&lt;p&gt;This project was always intended to be focused on Linux platforms. So, I&#39;ve removed the included &lt;code&gt;barf_macos&lt;/code&gt; and &lt;code&gt;barf_openbsd&lt;/code&gt; files to keep the generator more streamlined. But have no fear! Instructions for both Mac and OpenBSD can still be found on the main blog:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;/macos&quot;&gt;Running &lt;code&gt;barf&lt;/code&gt; on MacOS&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;/openbsd&quot;&gt;Running &lt;code&gt;barf&lt;/code&gt; on OpenBSD&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;As for the &quot;default&quot; look of &lt;code&gt;barf&lt;/code&gt;, I&#39;ve simplified things further. The total CSS styling now consists of only:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;*{box-sizing:border-box;}
+body{font-family:sans-serif;margin:0 auto;max-width:650px;padding:1rem;}
+img{max-width:100%;}
+pre{overflow:auto;}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Users still have the ability to tweak things as much as they&#39;d like, but the standard look should be more than enough for anyone just focusing on writing. Dark mode has also been dropped but is easily added by adding the following inside the &lt;code&gt;head&lt;/code&gt; tags:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;&amp;lt;meta name=&amp;quot;color-scheme&amp;quot; content=&amp;quot;dark light&amp;quot;&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Hopefully these changes reduce the overall scope of the project, which was a main point made on the README originally!&lt;/p&gt;</content>
+		<link href="https://barf.bt.ht/cleanup"/>
+		<id>https://barf.bt.ht/cleanup</id>
+		<updated>2023-10-09T10:00:00Z</updated>
+		<published>2023-10-09T10:00:00Z</published>
 	</entry>
 </feed>

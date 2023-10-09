@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="icon" href="data:,">
+	<title>Cleaning Up barf's Structure</title>
+	<link href="https://barf.bt.ht/atom.xml" type="application/atom+xml" rel="alternate" title="Atom feed for blog posts" />
+	<style>*{box-sizing:border-box;}body{font-family:sans-serif;margin:0 auto;max-width:650px;padding:1rem;}img{max-width:100%;}pre{overflow:auto;}</style>
+</head>
+
+<nav>
+	<a href="#menu">Menu &darr;</a>
+</nav>
+
+<main>
+<h1>Cleaning Up barf's Structure</h1>
+<p>2023-10-09</p>
+<p>Things probably look a little different around here. Both in terms of this demo site <em>and</em> the core <code>barf</code> files itself.</p>
+<p>This project was always intended to be focused on Linux platforms. So, I've removed the included <code>barf_macos</code> and <code>barf_openbsd</code> files to keep the generator more streamlined. But have no fear! Instructions for both Mac and OpenBSD can still be found on the main blog:</p>
+<ul>
+<li><a href="/macos">Running <code>barf</code> on MacOS</a></li>
+<li><a href="/openbsd">Running <code>barf</code> on OpenBSD</a></li>
+</ul>
+<p>As for the "default" look of <code>barf</code>, I've simplified things further. The total CSS styling now consists of only:</p>
+<pre><code>*{box-sizing:border-box;}
+body{font-family:sans-serif;margin:0 auto;max-width:650px;padding:1rem;}
+img{max-width:100%;}
+pre{overflow:auto;}
+</code></pre>
+<p>Users still have the ability to tweak things as much as they'd like, but the standard look should be more than enough for anyone just focusing on writing. Dark mode has also been dropped but is easily added by adding the following inside the <code>head</code> tags:</p>
+<pre><code>&lt;meta name=&quot;color-scheme&quot; content=&quot;dark light&quot;&gt;
+</code></pre>
+<p>Hopefully these changes reduce the overall scope of the project, which was a main point made on the README originally!</p>
+<footer role="contentinfo">
+    <hr>
+    <h3 id="menu">Menu Navigation</h3>
+    <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/about">About</a></li>
+        <li><a href="/websites">Websites</a></li>
+        <li><a href="https://git.sr.ht/~bt/barf">Source Code</a></li>
+    </ul>
+    <small>
+        Built with <a href="https://git.sr.ht/~bt/barf">barf</a>. <br>
+        The <a href="https://git.sr.ht/~bt/barf">code for this site</a> is <a href="https://git.sr.ht/~bt/barf/tree/master/item/LICENSE">MIT</a>.
+    </small>
+</footer>

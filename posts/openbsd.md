@@ -12,11 +12,6 @@ Along with your Markdown parser of choice (`barf` assumes you will be using my v
 doas pkg_add rsync coreutils gsed cmake gcc
 ```
 
-Then ensure that your Makefile calls the proper `barf_openbsd` file:
+Then ensure that you alter all instances of `sed` with `gsed` in the core `barf` file. (Or make an alias if you'd prefer not to alter the main file)
 
-```
-build:
-	sh ./barf_openbsd
-```
-
-After that, everything should work perfectly fine!
+After that, everything should work perfectly fine when building!
