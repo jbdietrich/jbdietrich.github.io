@@ -2,9 +2,9 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 	<title>barf</title>
 	<link href="https://barf.bt.ht/atom.xml" rel="self" />
-	<updated>2023-10-11T14:30:47Z</updated>
+	<updated>2023-10-25T21:10:49Z</updated>
 	<author>
-		<name>Bradley Taunt</name>
+		<name>James Dietrich</name>
 	</author>
 	<id>https://barf.bt.ht,2023-01-04:default-atom-feed/</id>
 	<entry>
