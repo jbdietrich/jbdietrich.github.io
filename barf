@@ -7,15 +7,15 @@ IFS='	'
 index_tsv() {
 	for f in "$1"/*.md
 	do
-		title=$(sed -n '/^# /{s/# //p; q}' "$f")
+		title=$(gsed -n '/^# /{s/# //p; q}' "$f")
 		printf '%s\t%s\t%s\t%s\n' "$f" "${title:="No Title"}"
 	done
 }
 
 index_html() {
 	# Print header
-	title=$(sed -n '/^# /{s/# //p; q}' index.md)
-	sed "s/{{TITLE}}/$title/" header.html
+	title=$(gsed -n '/^# /{s/# //p; q}' index.md)
+	gsed "s/{{TITLE}}/$title/" header.html
 
 	# Intro text
 	$MARKDOWN index.md
@@ -24,7 +24,7 @@ index_html() {
 
 	# Posts
 	while read -r f title created; do
-		link=$(echo "$f" | sed -E 's|.*/(.*).md|\1/|')
+		link=$(echo "$f" | gsed -E 's|.*/(.*).md|\1/|')
 		created=$(echo $(head -3 "$f" | tail -1))
 		echo "<li>$created &middot; <a href=\"$link\">$title</a></li>"
 	done < "$1" | sort -r
@@ -36,16 +36,16 @@ index_html() {
 }
 
 atom_xml() {
-	uri=$(sed -rn '/atom.xml/ s/.*href="([^"]*)".*/\1/ p' header.html)
-	domain=$(echo "$uri" | sed 's/atom.xml//g' | sed 's|/[^/]*$||')
+	uri=$(gsed -rn '/atom.xml/ s/.*href="([^"]*)".*/\1/ p' header.html)
+	domain=$(echo "$uri" | gsed 's/atom.xml//g' | gsed 's|/[^/]*$||')
 	first_commit_date=$(git log --pretty='format:%ai' . | cut -d ' ' -f1 | tail -1)
 
 	cat <<EOF
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-	<title>$(sed -n '/^# /{s/# //p; q}' index.md)</title>
+	<title>$(gsed -n '/^# /{s/# //p; q}' index.md)</title>
 	<link href="$domain/atom.xml" rel="self" />
-	<updated>$(date +%FT%TZ)</updated>
+	<updated>$(gdate +%FT%TZ)</updated>
 	<author>
 		<name>$(git config user.name)</name>
 	</author>
@@ -54,10 +54,10 @@ EOF
 
 	while read -r f title created; do
 
-		content=$($MARKDOWN "$f" | sed 's/&/\&amp;/g; s/</\&lt;/g; s/>/\&gt;/g; s/"/\&quot;/g; s/'"'"'/\&#39;/g')
-		post_link=$(echo "$f" | sed -E 's|posts/(.*).md|\1|')
+		content=$($MARKDOWN "$f" | gsed 's/&/\&amp;/g; s/</\&lt;/g; s/>/\&gt;/g; s/"/\&quot;/g; s/'"'"'/\&#39;/g')
+		post_link=$(echo "$f" | gsed -E 's|posts/(.*).md|\1|')
 		basic_date=$(echo $(head -3 "$f" | tail -1))
-		published_date=$(date -d $basic_date -u +%Y-%m-%dT10:%M:%SZ)
+		published_date=$(gdate -d $basic_date -u +%Y-%m-%dT10:%M:%SZ)
 
 		cat <<EOF
 	<entry>
@@ -78,13 +78,13 @@ write_page() {
 	filename=$1
 	directory=$(echo $(basename "$filename" .md))
 	$(mkdir -p build/$directory)
-	target=$(echo "$filename" | sed -r 's|\w+/(.*).md|build/\1/index.html|')
+	target=$(echo "$filename" | gsed -r 's|\w+/(.*).md|build/\1/index.html|')
 	created=$(echo $(head -3 "$filename" | tail -1))
 	title=$2
 
 	$MARKDOWN "$filename" | \
 		cat header.html - |\
-		sed "s|{{TITLE}}|$title|" \
+		gsed "s|{{TITLE}}|$title|" \
 		> "$target" && cat footer.html >> "$target"
 }
 
