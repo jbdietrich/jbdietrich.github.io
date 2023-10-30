@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-	<title>barf</title>
-	<link href="https://barf.bt.ht/atom.xml" rel="self" />
-	<updated>2023-10-25T21:25:52Z</updated>
+	<title></title>
+	<link href="https://jbdietrich.github.io/atom.xml" rel="self" />
+	<updated>2023-10-30T20:59:20Z</updated>
 	<author>
 		<name>James Dietrich</name>
 	</author>
-	<id>https://barf.bt.ht,2023-01-04:default-atom-feed/</id>
+	<id>https://jbdietrich.github.io,2023-01-04:default-atom-feed/</id>
 	<entry>
 		<title>Running `barf` on OpenBSD</title>
 		<content type="html">&lt;h1&gt;Running &lt;code&gt;barf&lt;/code&gt; on OpenBSD&lt;/h1&gt;
@@ -18,8 +18,8 @@
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;Then ensure that you alter all instances of &lt;code&gt;sed&lt;/code&gt; with &lt;code&gt;gsed&lt;/code&gt; in the core &lt;code&gt;barf&lt;/code&gt; file. (Or make an alias if you&#39;d prefer not to alter the main file)&lt;/p&gt;
 &lt;p&gt;After that, everything should work perfectly fine when building!&lt;/p&gt;</content>
-		<link href="https://barf.bt.ht/openbsd"/>
-		<id>https://barf.bt.ht/openbsd</id>
+		<link href="https://jbdietrich.github.io/openbsd"/>
+		<id>https://jbdietrich.github.io/openbsd</id>
 		<updated>2023-08-12T10:00:00Z</updated>
 		<published>2023-08-12T10:00:00Z</published>
 	</entry>
@@ -258,8 +258,8 @@ passed through to the resulting document without modification. This is a good
 way to work around features that are missing in smu. If you don&#39;t want this
 behaviour, use the &lt;code&gt;-n&lt;/code&gt; flag when executing smu to stricly escape the HTML
 tags.&lt;/p&gt;</content>
-		<link href="https://barf.bt.ht/markdown-examples"/>
-		<id>https://barf.bt.ht/markdown-examples</id>
+		<link href="https://jbdietrich.github.io/markdown-examples"/>
+		<id>https://jbdietrich.github.io/markdown-examples</id>
 		<updated>2023-01-05T10:00:00Z</updated>
 		<published>2023-01-05T10:00:00Z</published>
 	</entry>
@@ -284,8 +284,8 @@ sudo ln -fs /opt/homebrew/bin/gdate /usr/local/bin/date
 &lt;pre&gt;&lt;code&gt;export PATH=&amp;quot;/usr/local/bin:$PATH&amp;quot;
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;Reload your &lt;code&gt;bash&lt;/code&gt; instance and everything should work as intended!&lt;/p&gt;</content>
-		<link href="https://barf.bt.ht/macos"/>
-		<id>https://barf.bt.ht/macos</id>
+		<link href="https://jbdietrich.github.io/macos"/>
+		<id>https://jbdietrich.github.io/macos</id>
 		<updated>2023-01-18T10:00:00Z</updated>
 		<published>2023-01-18T10:00:00Z</published>
 	</entry>
@@ -302,8 +302,8 @@ sudo ln -fs /opt/homebrew/bin/gdate /usr/local/bin/date
 &lt;h2&gt;Minor Caveat&lt;/h2&gt;
 &lt;p&gt;Unfortunately, Safari still has minor &lt;code&gt;ahref&lt;/code&gt; / link color issue when defaulting to browser dark mode. If this is a problem for your own build of &lt;code&gt;barf&lt;/code&gt;, take a look at a &lt;a href=&quot;https://bt.ht/safari-default-dark-mode/&quot;&gt;solution I wrote about here&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;Personally, I can&#39;t be bothered to add that extra code to this project. The Safari team needs to get their shit together and fix such a simple bug. Plus, you shouldn&#39;t be using Safari anyway - it&#39;s proprietary garbage.&lt;/p&gt;</content>
-		<link href="https://barf.bt.ht/dark-mode"/>
-		<id>https://barf.bt.ht/dark-mode</id>
+		<link href="https://jbdietrich.github.io/dark-mode"/>
+		<id>https://jbdietrich.github.io/dark-mode</id>
 		<updated>2023-03-07T10:00:00Z</updated>
 		<published>2023-03-07T10:00:00Z</published>
 	</entry>
@@ -327,8 +327,8 @@ pre{overflow:auto;}
 &lt;pre&gt;&lt;code&gt;&amp;lt;meta name=&amp;quot;color-scheme&amp;quot; content=&amp;quot;dark light&amp;quot;&amp;gt;
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;Hopefully these changes reduce the overall scope of the project, which was a main point made on the README originally!&lt;/p&gt;</content>
-		<link href="https://barf.bt.ht/cleanup"/>
-		<id>https://barf.bt.ht/cleanup</id>
+		<link href="https://jbdietrich.github.io/cleanup"/>
+		<id>https://jbdietrich.github.io/cleanup</id>
 		<updated>2023-10-09T10:00:00Z</updated>
 		<published>2023-10-09T10:00:00Z</published>
 	</entry>
