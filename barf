@@ -98,6 +98,9 @@ while read -r f title created; do
 	write_page "$f" "$title" "$created"
 done < docs/posts.tsv
 
+# Make GitHub happy
+printf "jamesdietrich.website" > docs/CNAME
+
 # Pages
 index_tsv pages > docs/pages.tsv
 while read -r f title created; do
