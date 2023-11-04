@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 	<title></title>
 	<link href="https://jamesdietrich.website/atom.xml" rel="self" />
-	<updated>2023-10-30T21:32:01Z</updated>
+	<updated>2023-11-04T17:23:48Z</updated>
 	<author>
 		<name>James Dietrich</name>
 	</author>
@@ -326,7 +326,14 @@ pre{overflow:auto;}
 &lt;p&gt;Users still have the ability to tweak things as much as they&#39;d like, but the standard look should be more than enough for anyone just focusing on writing. Dark mode has also been dropped but is easily added by adding the following inside the &lt;code&gt;head&lt;/code&gt; tags:&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;&amp;lt;meta name=&amp;quot;color-scheme&amp;quot; content=&amp;quot;dark light&amp;quot;&amp;gt;
 &lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;Hopefully these changes reduce the overall scope of the project, which was a main point made on the README originally!&lt;/p&gt;</content>
+&lt;p&gt;Hopefully these changes reduce the overall scope of the project, which was a main point made on the README originally!&lt;/p&gt;
+&lt;p&gt;&lt;blockquote&gt;&lt;p&gt;
+Hello
+This is a quote with a &lt;a href=&quot;http://s01.de/~gottox&quot;&gt;link&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;&lt;/p&gt;
+&lt;p&gt;&lt;br /&gt;
+&lt;em&gt;November 2023, Roskilde&lt;/em&gt; &lt;img src=&quot;/public/images/chestnut3.png&quot; style=&quot;max-height: 1em;&quot; /&gt;
+&lt;/p&gt;</content>
 		<link href="https://jamesdietrich.website/cleanup"/>
 		<id>https://jamesdietrich.website/cleanup</id>
 		<updated>2023-10-09T10:00:00Z</updated>

@@ -2,7 +2,7 @@
 
 2023-10-09
 
-Things probably look a little different around here. Both in terms of this demo site *and* the core `barf` files itself.
+Things probably look a little different around here. Both in terms of this demo site _and_ the core `barf` files itself.
 
 This project was always intended to be focused on Linux platforms. So, I've removed the included `barf_macos` and `barf_openbsd` files to keep the generator more streamlined. But have no fear! Instructions for both Mac and OpenBSD can still be found on the main blog:
 
@@ -25,3 +25,11 @@ Users still have the ability to tweak things as much as they'd like, but the sta
 ```
 
 Hopefully these changes reduce the overall scope of the project, which was a main point made on the README originally!
+
+<blockquote><p>
+Hello
+This is a quote with a <a href="http://s01.de/~gottox">link</a></p>
+</blockquote>
+
+<br />
+_November 2023, Roskilde_ <img src="/public/images/chestnut3.png" style="max-height: 1em;" />
