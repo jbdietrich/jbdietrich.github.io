@@ -84,7 +84,7 @@ def generate_rss(posts, rss_file, author_name, site_name, site_url)
   rss = RSS::Maker.make("atom") do |maker|
     maker.channel.author = author_name
     maker.channel.updated = Time.now.to_s
-    maker.channel.about = site_name
+    maker.channel.about = site_url
     maker.channel.title = "#{site_name} RSS Feed"
 
     posts.each do |post|
