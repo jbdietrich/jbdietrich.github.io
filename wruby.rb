@@ -2,6 +2,7 @@ require 'kramdown'
 require 'fileutils'
 require 'date'
 require 'rss'
+require 'find'
 
 # Configuration all the things!
 site_url = 'https://wruby.btxx.org'
@@ -42,15 +43,17 @@ end
 def process_markdown_files(input_directory, output_directory, header_content, footer_content)
   items = []
 
-  Dir.glob("#{input_directory}/**/*.md").each do |md_file|
-    md_content = File.read(md_file)
+  Find.find(input_directory) do |path|
+    next unless path =~ /\.md\z/
+
+    md_content = File.read(path)
     lines = md_content.lines
 
     title = extract_title_from_md(lines)
     date = Date.parse(lines[2]&.strip || '') rescue Date.today
     html_content = Kramdown::Document.new(md_content).to_html
 
-    relative_path = md_file.sub(input_directory + '/', '').sub('.md', '')
+    relative_path = path.sub(input_directory + '/', '').sub('.md', '')
     item_dir = File.join(output_directory, relative_path)
     output_file = "#{item_dir}/index.html"
     FileUtils.mkdir_p(item_dir)
@@ -112,3 +115,5 @@ FileUtils.cp_r(public_dir, output_dir)
 generate_rss(posts, rss_file, author_name, site_name, site_url)
 
 puts "Blog built successfully in '#{output_dir}' folder. Have a great day!"
+
+
