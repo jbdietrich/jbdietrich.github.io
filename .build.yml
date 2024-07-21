@@ -1,0 +1,21 @@
+image: alpine/latest
+oauth: pages.sr.ht/PAGES:RW
+packages:
+- ruby
+- go
+- hut
+environment:
+site: wruby.btxx.org
+sources:
+- https://git.sr.ht/~bt/wruby
+tasks:
+- install-gems: |
+    sudo gem install kramdown rss
+- build: |
+    cd wruby
+    make build
+- package: |
+    cd wruby/build
+    tar -cvz . > ../../site.tar.gz
+- upload: |
+    hut pages publish -d wruby.btxx.org site.tar.gz

@@ -14,6 +14,12 @@ Install required gems:
 gem install kramdown rss
 ```
 
+## Getting Started
+
+Make your changes in the top of the main `wruby.rb` file (site URL, your name,
+etc.). Remove the `.build.yml` unless you plan to host with sourcehut pages,
+otherwise edit this file with your own details.
+
 ## Running
 
 1. Create markdown blog posts under root `posts/` directory

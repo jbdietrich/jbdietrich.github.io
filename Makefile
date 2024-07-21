@@ -1,6 +1,6 @@
 build:
 	rm -rf build && mkdir build
-	ruby blog.rb
+	ruby wruby.rb 
 
 clean:
 	rm -rf build/*
