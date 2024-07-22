@@ -7,7 +7,7 @@ The "w" is silent...
 ## Features
 
 * Fast, OS-agnostic site generator
-* Auto-generated, valid [Atom feed](/index.atom)
+* Auto-generated, valid [RSS feed](/index.rss)
 * Custom `header.html` and `footer.html` templates
 * Not much else (this is a *good* thing!)
 

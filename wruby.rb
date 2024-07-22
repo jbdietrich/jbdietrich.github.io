@@ -20,7 +20,7 @@ pages_output_dir = "#{output_dir}/"
 header_file = 'header.html'
 footer_file = 'footer.html'
 root_index_file = 'index.md'
-rss_file = "#{output_dir}/index.atom"
+rss_file = "#{output_dir}/index.rss"
 
 # Make sure output directories exist
 [posts_output_dir, pages_output_dir].each { |dir| FileUtils.mkdir_p(dir) }
@@ -83,21 +83,21 @@ def generate_index(posts, header_content, footer_content, root_index_file, outpu
 end
 
 # Generate the RSS feed
-# Generate the RSS feed
 def generate_rss(posts, rss_file, author_name, site_name, site_url, posts_dir)
-  rss = RSS::Maker.make("atom") do |maker|
+  rss = RSS::Maker.make("2.0") do |maker|
     maker.channel.author = author_name
     maker.channel.updated = Time.now.utc.to_s
-    maker.channel.about = site_url
     maker.channel.title = "#{site_name} RSS Feed"
+    maker.channel.description = "The official RSS Feed for #{site_url}"
+    maker.channel.link = site_url
 
     posts.each do |post|
       maker.items.new_item do |item|
         item.link = "#{site_url}/#{posts_dir}/#{post[:link]}"
         item.title = post[:title]
         item.updated = post[:date].utc.to_s
-        item.content.type = 'html'
-        item.content.content = post[:content]
+        item.published = post[:date].utc.to_s
+        item.content_encoded = post[:content]
       end
     end
   end
