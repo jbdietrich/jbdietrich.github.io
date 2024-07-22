@@ -1,6 +1,7 @@
 require 'kramdown'
 require 'fileutils'
 require 'date'
+require 'time'
 require 'rss'
 require 'find'
 
@@ -82,7 +83,7 @@ def generate_index(posts, header_content, footer_content, root_index_file, outpu
   File.write("#{output_dir}/index.html", index_content)
 end
 
-# Generate the RSS feed
+# Generate the RSS 2.0 feed
 def generate_rss(posts, rss_file, author_name, site_name, site_url, posts_dir)
   rss = RSS::Maker.make("2.0") do |maker|
     maker.channel.author = author_name
@@ -92,12 +93,17 @@ def generate_rss(posts, rss_file, author_name, site_name, site_url, posts_dir)
     maker.channel.link = site_url
 
     posts.each do |post|
+      date = post[:date].utc
+      item_link = "#{site_url}/#{posts_dir}/#{post[:link]}"
+      item_title = post[:title]
+      item_content = post[:content]
+
       maker.items.new_item do |item|
-        item.link = "#{site_url}/#{posts_dir}/#{post[:link]}"
-        item.title = post[:title]
-        item.updated = post[:date].utc.to_s
-        item.published = post[:date].utc.to_s
-        item.content_encoded = post[:content]
+        item.link = item_link
+        item.title = item_title
+        item.updated = date.to_s
+        item.pubDate = date.rfc822
+        item.description = item_content
       end
     end
   end
