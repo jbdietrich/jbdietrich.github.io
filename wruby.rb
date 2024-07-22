@@ -62,7 +62,7 @@ def process_markdown_files(input_directory, output_directory, header_content, fo
     header = replace_title_placeholder(header_content, title)
     File.write(output_file, header + html_content + footer_content)
 
-    items << { title: title, date: date.to_time.utc, link: relative_path + '/', content: html_content }
+    items << { title: title, date: date, link: relative_path + '/', content: html_content }
   end
 
   items
