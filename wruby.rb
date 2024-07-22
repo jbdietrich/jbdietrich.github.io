@@ -61,7 +61,7 @@ def process_markdown_files(input_directory, output_directory, header_content, fo
     header = replace_title_placeholder(header_content, title)
     File.write(output_file, header + html_content + footer_content)
 
-    items << { title: title, date: date, link: relative_path + '/', content: html_content }
+    items << { title: title, date: date.to_time.utc, link: relative_path + '/', content: html_content }
   end
 
   items
@@ -83,10 +83,11 @@ def generate_index(posts, header_content, footer_content, root_index_file, outpu
 end
 
 # Generate the RSS feed
+# Generate the RSS feed
 def generate_rss(posts, rss_file, author_name, site_name, site_url, posts_dir)
   rss = RSS::Maker.make("atom") do |maker|
     maker.channel.author = author_name
-    maker.channel.updated = Time.now.to_s
+    maker.channel.updated = Time.now.utc.to_s
     maker.channel.about = site_url
     maker.channel.title = "#{site_name} RSS Feed"
 
@@ -94,7 +95,7 @@ def generate_rss(posts, rss_file, author_name, site_name, site_url, posts_dir)
       maker.items.new_item do |item|
         item.link = "#{site_url}/#{posts_dir}/#{post[:link]}"
         item.title = post[:title]
-        item.updated = post[:date].to_s
+        item.updated = post[:date].utc.to_s
         item.content.type = 'html'
         item.content.content = post[:content]
       end
