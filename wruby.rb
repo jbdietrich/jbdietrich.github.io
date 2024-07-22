@@ -92,7 +92,7 @@ def generate_rss(posts, rss_file, author_name, site_name, site_url)
 
     posts.each do |post|
       maker.items.new_item do |item|
-        item.link = "#{site_url}/#{post[:link]}"
+        item.link = "#{site_url}/#{posts_dir}/#{post[:link]}"
         item.title = post[:title]
         item.updated = post[:date].to_s
         item.content.type = 'html'
@@ -115,5 +115,3 @@ FileUtils.cp_r(public_dir, output_dir)
 generate_rss(posts, rss_file, author_name, site_name, site_url)
 
 puts "Blog built successfully in '#{output_dir}' folder. Have a great day!"
-
-
