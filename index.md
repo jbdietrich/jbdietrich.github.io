@@ -1,6 +1,6 @@
 # wruby
 
-**wruby is a single file, minimal site generator written in Ruby.**
+**wruby is a single file, minimal site generator written in Ruby.** (*Not* the ruby gem)
 
 The "w" is silent...
 
