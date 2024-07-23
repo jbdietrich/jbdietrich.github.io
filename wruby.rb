@@ -4,24 +4,29 @@ require 'date'
 require 'time'
 require 'rss'
 require 'find'
+require 'yaml'
 
-# Configuration all the things!
-site_url = 'https://wruby.btxx.org'
-site_name = 'wruby'
-author_name = 'Bradley Taunt'
+# Load configuration
+config = YAML.load_file('_config.yml')
 
-posts_dir = 'posts'
-pages_dir = 'pages'
-public_dir = 'public'
+site_url = config['site_url']
+site_name = config['site_name']
+author_name = config['author_name']
 
-output_dir = 'build'
-posts_output_dir = "#{output_dir}/posts"
-pages_output_dir = "#{output_dir}/"
+posts_dir = config['directories']['posts']
+pages_dir = config['directories']['pages']
+public_dir = config['directories']['public']
+output_dir = config['directories']['output']
+posts_output_dir = config['directories']['posts_output']
+pages_output_dir = config['directories']['pages_output']
 
-header_file = 'header.html'
-footer_file = 'footer.html'
-root_index_file = 'index.md'
-rss_file = "#{output_dir}/index.rss"
+header_file = config['files']['header']
+footer_file = config['files']['footer']
+root_index_file = config['files']['root_index']
+posts_index_file = config['files']['posts_index']
+rss_file = config['files']['rss']
+
+post_count = config['misc']['post_count']
 
 # Make sure output directories exist
 [posts_output_dir, pages_output_dir].each { |dir| FileUtils.mkdir_p(dir) }
@@ -69,7 +74,7 @@ def process_markdown_files(input_directory, output_directory, header_content, fo
 end
 
 # Create the root index file
-def generate_index(posts, header_content, footer_content, root_index_file, output_dir, posts_dir)
+def generate_index(posts, header_content, footer_content, root_index_file, post_count, output_dir, posts_dir)
   root_index_content = File.read(root_index_file)
   root_title = extract_title_from_md(root_index_content.lines)
   root_html = Kramdown::Document.new(root_index_content).to_html
@@ -77,10 +82,25 @@ def generate_index(posts, header_content, footer_content, root_index_file, outpu
   header = replace_title_placeholder(header_content, root_title)
 
   index_content = header + root_html + "<ul class=\"posts\">\n"
-  posts.each { |post| index_content << "<li><span>#{post[:date]}</span><a href='/#{posts_dir}/#{post[:link]}'>#{post[:title]}</a></li>\n" }
-  index_content << "</ul>\n" + footer_content
+  posts.first(post_count).each { |post| index_content << "<li><span>#{post[:date]}</span><a href='/#{posts_dir}/#{post[:link]}'>#{post[:title]}</a></li>\n" }
+  index_content << "</ul>\n<p><a href='/#{posts_dir}'>View all posts &rarr;</a></p>\n" + footer_content
 
   File.write("#{output_dir}/index.html", index_content)
+end
+
+# Create the full posts list page
+def generate_full_posts_list(posts, header_content, footer_content, posts_index_file, output_dir, posts_dir)
+  posts_index_content = File.read(posts_index_file)
+  posts_title = extract_title_from_md(posts_index_content.lines)
+  posts_html = Kramdown::Document.new(posts_index_content).to_html
+
+  header = replace_title_placeholder(header_content, posts_title)
+
+  list_content = header + posts_html + "<ul class=\"posts\">\n"
+  posts.each { |post| list_content << "<li><span>#{post[:date]}</span><a href='/#{posts_dir}/#{post[:link]}'>#{post[:title]}</a></li>\n" }
+  list_content << "</ul>\n" + footer_content
+
+  File.write("#{output_dir}/posts/index.html", list_content)
 end
 
 # Generate the RSS 2.0 feed
@@ -117,7 +137,8 @@ header_content = File.read(header_file)
 posts = process_markdown_files(posts_dir, posts_output_dir, header_content, footer_content).sort_by { |post| -post[:date].to_time.to_i }
 pages = process_markdown_files(pages_dir, pages_output_dir, header_content, footer_content)
 
-generate_index(posts, header_content, footer_content, root_index_file, output_dir, posts_dir)
+generate_index(posts, header_content, footer_content, root_index_file, post_count, output_dir, posts_dir)
+generate_full_posts_list(posts, header_content, footer_content, posts_index_file, output_dir, posts_dir)
 FileUtils.cp_r(public_dir, output_dir)
 generate_rss(posts, rss_file, author_name, site_name, site_url, posts_dir)
 
