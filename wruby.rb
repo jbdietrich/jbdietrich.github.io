@@ -45,16 +45,6 @@ def extract_title_from_md(lines)
   first_line&.start_with?('# ') ? first_line[2..-1].strip : 'Blog Index'
 end
 
-# Grab the date from each markdown file
-def extract_date_from_md(lines)
-  date_str = lines[2]&.strip
-  begin
-    date_str ? DateTime.parse(date_str).new_offset(0) : DateTime.now.new_offset(0)
-  rescue Date::Error
-    DateTime.now.new_offset(0)
-  end
-end
-
 # Convert markdown files
 def process_markdown_files(input_directory, output_directory, header_content, footer_content)
   items = []
@@ -66,7 +56,7 @@ def process_markdown_files(input_directory, output_directory, header_content, fo
     lines = md_content.lines
 
     title = extract_title_from_md(lines)
-    date = extract_date_from_md(lines)
+    date = Date.parse(lines[2]&.strip || '') rescue Date.today
     html_content = Kramdown::Document.new(md_content).to_html
 
     relative_path = path.sub(input_directory + '/', '').sub('.md', '')
@@ -123,7 +113,7 @@ def generate_rss(posts, rss_file, author_name, site_name, site_url, posts_dir)
     maker.channel.link = site_url
 
     posts.each do |post|
-      date = DateTime.parse(post[:date].to_s).new_offset('+05:00')
+      date = DateTime.parse(post[:date].to_s).to_time.utc
       item_link = "#{site_url}/#{posts_dir}/#{post[:link]}"
       item_title = post[:title]
       item_content = post[:content]
@@ -131,8 +121,8 @@ def generate_rss(posts, rss_file, author_name, site_name, site_url, posts_dir)
       maker.items.new_item do |item|
         item.link = item_link
         item.title = item_title
-        item.updated = date.to_time.to_s
-        item.pubDate = date.to_time.rfc822
+        item.updated = date.to_s
+        item.pubDate = date.rfc822
         item.description = item_content
       end
     end
@@ -140,7 +130,6 @@ def generate_rss(posts, rss_file, author_name, site_name, site_url, posts_dir)
 
   File.write(rss_file, rss)
 end
-
 
 # Process header, posts, pages, etc.
 header_content = File.read(header_file)
