@@ -13,4 +13,6 @@ The "w" is silent...
 
 You can learn more by reading [the official README](https://git.sr.ht/~bt/wruby).
 
-## Articles
+## Latest Posts
+
+[comment]: # (Your latest posts will be added here on build)
