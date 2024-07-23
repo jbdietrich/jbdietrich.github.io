@@ -123,7 +123,7 @@ def generate_rss(posts, rss_file, author_name, site_name, site_url, posts_dir)
     maker.channel.link = site_url
 
     posts.each do |post|
-      date = DateTime.parse(post[:date].to_s).new_offset('-05:00')
+      date = DateTime.parse(post[:date].to_s).new_offset('+05:00')
       item_link = "#{site_url}/#{posts_dir}/#{post[:link]}"
       item_title = post[:title]
       item_content = post[:content]
