@@ -1,6 +1,6 @@
 # Exploring Futurama: A Dive into the World of Tomorrow
 
-2024-07-22
+2024-07-21
 
 ## Introduction
 
