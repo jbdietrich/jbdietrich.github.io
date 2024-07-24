@@ -113,7 +113,7 @@ def generate_rss(posts, rss_file, author_name, site_name, site_url, posts_dir)
     maker.channel.link = site_url
 
     posts.each do |post|
-      date = DateTime.parse(post[:date].to_s).to_time.utc
+      date = DateTime.parse(post[:date].to_s).to_time
       item_link = "#{site_url}/#{posts_dir}/#{post[:link]}"
       item_title = post[:title]
       item_content = post[:content]
@@ -121,8 +121,8 @@ def generate_rss(posts, rss_file, author_name, site_name, site_url, posts_dir)
       maker.items.new_item do |item|
         item.link = item_link
         item.title = item_title
-        item.updated = date.to_s
-        item.pubDate = date.rfc822
+        item.updated = date.utc.to_s
+        item.pubDate = date.utc.rfc822
         item.description = item_content
       end
     end
