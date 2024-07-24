@@ -112,7 +112,7 @@ def generate_rss(posts, rss_file, author_name, site_name, site_url, posts_dir)
     maker.channel.link = site_url
 
     posts.each do |post|
-      date = Date.parse(post[:date].to_s).to_time
+      date = Date.parse(post[:date].to_s).to_time + 12*60*60 # Force time to midday
       item_link = "#{site_url}/#{posts_dir}/#{post[:link]}"
       item_title = post[:title]
       item_content = post[:content]
