@@ -1,19 +1,18 @@
 # wruby
 
 > This is a heavy work-in-progress and I am hardly a Ruby expert.
->
 > Please consider contributing to make the project better!
 
 Minimal blog and static site generator. The "w" is silent...
 
 ## Dependencies
 
-- `ruby`
+- `ruby 3.3.0`
 
 Install required gems:
 
 ```
-gem install kramdown rss
+bundle install
 ```
 
 ## Getting Started

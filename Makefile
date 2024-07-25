@@ -1,6 +1,6 @@
 build:
 	rm -rf build && mkdir build
-	ruby wruby.rb 
+	bundle exec ruby wruby.rb 
 
 clean:
 	rm -rf build/*
