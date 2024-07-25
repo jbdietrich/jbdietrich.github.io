@@ -10,9 +10,10 @@ sources:
 - https://git.sr.ht/~bt/wruby
 tasks:
 - install-gems: |
-    sudo gem install kramdown rss
+    sudo gem install bundler
 - build: |
     cd wruby
+    sudo bundle install
     make build
 - package: |
     cd wruby/build
