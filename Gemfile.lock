@@ -18,7 +18,7 @@ DEPENDENCIES
   rss (~> 0.3.0)
 
 RUBY VERSION
-   ruby 3.3.0p0
+   ruby 3.3.3p89
 
 BUNDLED WITH
    2.5.6
