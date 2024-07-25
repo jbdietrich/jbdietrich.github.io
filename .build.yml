@@ -2,6 +2,7 @@ image: alpine/latest
 oauth: pages.sr.ht/PAGES:RW
 packages:
 - ruby
+- ruby-dev
 - go
 - hut
 environment:
