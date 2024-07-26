@@ -14,7 +14,6 @@ tasks:
     sudo gem install bundler
 - build: |
     cd wruby
-    sudo bundle install
     make build
 - package: |
     cd wruby/build
