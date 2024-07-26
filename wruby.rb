@@ -1,15 +1,15 @@
+require 'bundler/inline'
+gemfile do
+  gem 'kramdown', '2.4.0'
+  gem 'rss', '0.3.0'
+end
+
 require 'kramdown'
 require 'fileutils'
 require 'date'
 require 'rss'
 require 'find'
 require 'yaml'
-
-require 'bundler/inline'
-gemfile do
-  gem 'kramdown', '2.4.0'
-  gem 'rss', '0.3.0'
-end
 
 # Load configuration
 config = YAML.load_file('_config.yml')
