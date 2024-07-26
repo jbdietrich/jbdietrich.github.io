@@ -7,13 +7,7 @@ Minimal blog and static site generator. The "w" is silent...
 
 ## Dependencies
 
-- `ruby 3.3.0`
-
-Install required gems:
-
-```
-bundle install
-```
+- `ruby
 
 ## Getting Started
 
@@ -35,6 +29,6 @@ otherwise edit this file with your own details.
 
 ## Running
 
-1. Run `make build` in the root directory
+1. Run `make build` in the root directory (this will automatically install required `gems`)
 2. Upload `build` folder to your server
 3. Share your blog or site!
