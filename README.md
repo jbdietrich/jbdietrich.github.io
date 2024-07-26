@@ -7,7 +7,7 @@ Minimal blog and static site generator. The "w" is silent...
 
 ## Dependencies
 
-- `ruby
+- ruby
 
 ## Getting Started
 
