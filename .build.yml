@@ -11,7 +11,7 @@ sources:
 - https://git.sr.ht/~bt/wruby
 tasks:
 - install-gems: |
-    sudo gem install bundler kramdown rss
+    sudo gem install bundler 'kramdown:2.4.0' 'rss:0.3.0'
 - build: |
     cd wruby
     sudo make build
