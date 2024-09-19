@@ -1,15 +1,13 @@
 # wruby
 
-> This is a heavy work-in-progress and I am hardly a Ruby expert.
-> Please consider contributing to make the project better!
-
-Minimal blog and static site generator. The "w" is silent...
+* Minimal blog and static site generator. The "w" is silent...
+* Licensed under [MIT](https://choosealicense.com/licenses/mit/)
+* Discussion, patches etc. go to the [list](https://lists.sr.ht/~bt/wruby-devel)
 
 ## Dependencies
 
-- `ruby` (`ruby-dev` if needed)
-  - `kramdown` gem
-  - `rss` gem
+* `ruby` (`ruby-dev` if needed)
+* ruby gems: `kramdown` and `rss`
 
 ## Getting Started
 
@@ -17,8 +15,7 @@ Make your changes in the main configuration file `_config.yml` file (site URL, y
 etc.).
 
 * Blog posts go under the `posts` directory as markdown files
-  - Posts need to be structured with an `h1` on the first line, a space on the
-    second, and the date on the third line (ie. 2024-07-20)
+* Posts need to be structured with an `h1` on the first line, a space on the second, and the date on the third line (ie. 2024-07-20)
 * Pages go under the `pages` directory as markdown files
 * Media (images, videos etc) go in the root `public` directory
 
@@ -26,7 +23,7 @@ etc.).
 
 * The homepage only displays the first `5` posts. You can configure this in `_config.yml` under `post_count`.
 * The full blog post index will be generated at `yoursite.com/posts`
-  * This means you need to have a `posts.md` file in your `pages` directory (or change `posts_index` the core `_config.yml`)
+* This means you need to have a `posts.md` file in your `pages` directory (or change `posts_index` the core `_config.yml`)
 
 ## Running
 
