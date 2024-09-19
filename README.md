@@ -30,7 +30,7 @@ otherwise edit this file with your own details.
 ## Running
 
 1. `wruby` is based off of Ruby 3.3.3 (use `rbenv` or `rvm` to avoid privilege conflicts)
-2. Install dependencies: `gem install bundler 'kramdown:2.4.0' 'rss:0.3.0'`
+2. Install dependencies: `gem install 'kramdown:2.4.0' 'rss:0.3.0'`
 3. Run `make build` in the root directory
 4. Upload `build` folder to your server
 5. Share your blog or site!
