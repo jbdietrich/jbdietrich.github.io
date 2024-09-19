@@ -14,8 +14,7 @@ Minimal blog and static site generator. The "w" is silent...
 ## Getting Started
 
 Make your changes in the main configuration file `_config.yml` file (site URL, your name,
-etc.). Remove the `.build.yml` unless you plan to host with sourcehut pages,
-otherwise edit this file with your own details.
+etc.).
 
 * Blog posts go under the `posts` directory as markdown files
   - Posts need to be structured with an `h1` on the first line, a space on the
