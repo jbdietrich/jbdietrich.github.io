@@ -7,7 +7,9 @@ Minimal blog and static site generator. The "w" is silent...
 
 ## Dependencies
 
-- ruby
+- `ruby` (`ruby-dev` if needed)
+  - `kramdown` gem
+  - `rss` gem
 
 ## Getting Started
 
