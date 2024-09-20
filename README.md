@@ -1,8 +1,9 @@
 # wruby
 
-* Minimal blog and static site generator. The "w" is silent...
+* Minimal blog and static site generator
 * Licensed under [MIT](https://choosealicense.com/licenses/mit/)
 * Discussion, patches etc. go to the [list](https://lists.sr.ht/~bt/wruby-devel)
+* The "w" is silent...
 
 ## Dependencies
 
