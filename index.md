@@ -11,7 +11,7 @@ The "w" is silent...
 * Custom `header.html` and `footer.html` templates
 * Not much else (this is a *good* thing!)
 
-You can learn more by reading [the official README](https://git.sr.ht/~bt/wruby).
+You can learn more by reading [the official README](https://git.btxx.org/wruby/about).
 
 ## Latest Posts
 
