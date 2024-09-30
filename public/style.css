@@ -1,0 +1,94 @@
+* {
+    box-sizing: border-box;
+}
+body {
+    font-family: "Verdana", sans-serif;
+    line-height: 1.4;
+    font-size: 13px;
+    margin: 0 auto;
+    max-width: 470px;
+    padding: 0 10px 10px;
+}
+h1{font-size:18px;margin-top:1em;}
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: 15px;
+    margin: 2em 0 0;
+}
+blockquote {
+    border-left: 4px solid;
+    margin: 2em 0 2em 2em;
+    padding: 2px 8px;
+}
+blockquote p {
+  font-style: italic;
+  margin: 0;
+  padding: 0;
+}
+img {
+    max-width: 100%;
+}
+pre {
+    border: 1px solid;
+    overflow: auto;
+    padding: 5px;
+}
+table {
+    text-align: left;
+    width: 100%;
+}
+nav {
+  border-bottom: 1px solid;
+  padding: 10px 0;
+}
+nav a:last-of-type {
+  float: right;
+}
+#menu,
+.posts {
+    list-style: none;
+    padding: 0;
+}
+.posts li {
+    margin-bottom: 8px;
+}
+.posts li span {
+    display: block;
+    font-size: 90%;
+}
+#menu li {
+    display: inline-block;
+    margin-right: 8px;
+}
+figure {
+  margin: 3em 0;
+}
+figure img {
+  width: 100%;
+}
+figcaption {
+    font-size: 90%;
+}
+footer {
+  border-top: 1px solid;
+  margin: 2em 0;
+}
+.footnotes {
+    font-size: 90%;
+}
+code {
+    background-color: #000;
+    color: #f1f1f1;
+    border-radius: 0.2rem;
+    padding: 0.1rem;
+}
+pre:has(code) {
+    border: 2px solid #f9f9f9;
+    background-color: #000;
+    color: #f1f1f1;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+}

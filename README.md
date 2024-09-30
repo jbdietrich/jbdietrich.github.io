@@ -19,6 +19,7 @@ etc.).
 * Posts need to be structured with an `h1` on the first line, a space on the second, and the date on the third line (ie. 2024-07-20)
 * Pages go under the `pages` directory as markdown files
 * Media (images, videos etc) go in the root `public` directory
+* Main styling is found in `public/style.css` (feel free to get creative!)
 
 ## Defaults
 
