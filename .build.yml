@@ -1,21 +1,18 @@
-image: alpine/latest
-oauth: pages.sr.ht/PAGES:RW
+image: alpine/edge
 packages:
 - ruby
-- go
-- hut
-environment:
-site: wruby.btxx.org
+- ruby-dev
+- rsync
 sources:
 - https://git.sr.ht/~bt/wruby
+secrets:
+- 07201d32-1451-4a8f-9bff-ce8b2232c67d
 tasks:
 - install-gems: |
     sudo gem install 'kramdown:2.4.0' 'rss:0.3.0'
 - build: |
     cd wruby
-    make build
-- package: |
-    cd wruby/build
-    tar -cvz . > ../../site.tar.gz
-- upload: |
-    hut pages publish -d wruby.btxx.org site.tar.gz
+    sudo make build
+- deploy-blog: |
+    cd wruby
+    rsync --rsh="ssh -o StrictHostKeyChecking=no -i ~/.ssh/07201d32-1451-4a8f-9bff-ce8b2232c67d" -rzP build/ bt@wruby.btxx.org:/var/www/wruby
