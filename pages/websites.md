@@ -7,3 +7,4 @@ Send an email to bt [at] btxx [dot] org if you would like me to add your wruby-g
 * [jsfree.org](https://jsfree.org)
 * [adast.dk](https://adast.dk)
 * [arena.adast.dk](https://arena.adast.dk)
+* [friendclub.lol](https://friendclub.lol)
