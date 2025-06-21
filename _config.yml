@@ -1,0 +1,21 @@
+site_url: "https://jamesdietrich.website"
+site_name: "James Dietrich"
+author_name: "James Dietrich"
+
+directories:
+  posts: "posts"
+  pages: "pages"
+  public: "public"
+  output: "docs"
+  posts_output: "docs/posts"
+  pages_output: "docs/"
+
+files:
+  header: "header.html"
+  footer: "footer.html"
+  root_index: "index.md"
+  posts_index: "pages/posts.md"
+  rss: "docs/index.rss"
+
+misc:
+  post_count: 5

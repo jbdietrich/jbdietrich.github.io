@@ -1,0 +1,406 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0"
+  xmlns:content="http://purl.org/rss/1.0/modules/content/"
+  xmlns:dc="http://purl.org/dc/elements/1.1/"
+  xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd"
+  xmlns:trackback="http://madskills.com/public/xml/rss/module/trackback/">
+  <channel>
+    <title>James Dietrich RSS Feed</title>
+    <link>https://jamesdietrich.website</link>
+    <description>The official RSS Feed for https://jamesdietrich.website</description>
+    <pubDate>Sat, 21 Jun 2025 17:01:39 +0200</pubDate>
+    <item>
+      <title>Exploring Futurama: A Dive into the World of Tomorrow</title>
+      <link>https://jamesdietrich.website/posts/futurama/</link>
+      <description>&lt;h1 id=&quot;exploring-futurama-a-dive-into-the-world-of-tomorrow&quot;&gt;Exploring Futurama: A Dive into the World of Tomorrow&lt;/h1&gt;
+
+&lt;p&gt;2024-07-22&lt;/p&gt;
+
+&lt;h2 id=&quot;introduction&quot;&gt;Introduction&lt;/h2&gt;
+
+&lt;p&gt;This markdown file is just another example to showcase how things will look when fully rendered via wruby.&lt;/p&gt;
+
+&lt;p&gt;Welcome to the world of tomorrow! In this blog post, we’ll explore some iconic dialogue from the hit animated series &lt;em&gt;Futurama&lt;/em&gt;. The show, created by Matt Groening, is renowned for its clever writing and memorable characters. Let’s dive in!&lt;/p&gt;
+
+&lt;h2 id=&quot;notable-quotes&quot;&gt;Notable Quotes&lt;/h2&gt;
+
+&lt;p&gt;Here are some of my favorite lines from the series:&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;Bender&lt;/strong&gt;: “Bite my shiny metal ass!”&lt;/p&gt;
+
+  &lt;p&gt;&lt;em&gt;Season 1, Episode 1&lt;/em&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;Fry&lt;/strong&gt;: “I’m gonna go build my own theme park, with blackjack and hookers. In fact, forget the park!”&lt;/p&gt;
+
+  &lt;p&gt;&lt;em&gt;Season 1, Episode 6&lt;/em&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;Professor Farnsworth&lt;/strong&gt;: “Good news, everyone!”&lt;/p&gt;
+
+  &lt;p&gt;&lt;em&gt;Multiple Episodes&lt;/em&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h2 id=&quot;dialogue-excerpt&quot;&gt;Dialogue Excerpt&lt;/h2&gt;
+
+&lt;p&gt;Let’s take a look at a classic exchange between Fry and Leela:&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Fry&lt;/strong&gt;: “Why am I sticky and naked? Did I miss something fun?”&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Leela&lt;/strong&gt;: “Fry, you idiot! You forgot to drink the antidote for the brain slug!”&lt;/p&gt;
+
+&lt;h2 id=&quot;conclusion&quot;&gt;Conclusion&lt;/h2&gt;
+
+&lt;p&gt;&lt;em&gt;Futurama&lt;/em&gt; has given us countless laughs and unforgettable moments. Whether it’s Bender’s antics or Fry’s naivety, the show continues to resonate with fans. What’s your favorite &lt;em&gt;Futurama&lt;/em&gt; quote? Share it in the comments below!&lt;/p&gt;
+
+&lt;h2 id=&quot;references&quot;&gt;References&lt;/h2&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;&lt;a href=&quot;https://theinfosphere.org/Main_Page&quot;&gt;Futurama Wiki&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.imdb.com/title/tt0149460/&quot;&gt;Futurama on IMDb&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;em&gt;Stay tuned for more posts on your favorite shows!&lt;/em&gt;&lt;/p&gt;
+</description>
+      <pubDate>Mon, 22 Jul 2024 12:00:00 +0200</pubDate>
+      <dc:date>2024-07-22T12:00:00+02:00</dc:date>
+    </item>
+    <item>
+      <title>Markdown Examples in wruby</title>
+      <link>https://jamesdietrich.website/posts/markdown-examples/</link>
+      <description>&lt;h1 id=&quot;markdown-examples-in-wruby&quot;&gt;Markdown Examples in wruby&lt;/h1&gt;
+
+&lt;p&gt;2024-07-20&lt;/p&gt;
+
+&lt;h2 id=&quot;an-h2-header&quot;&gt;An h2 header&lt;/h2&gt;
+
+&lt;p&gt;Paragraphs are separated by a blank line.&lt;/p&gt;
+
+&lt;p&gt;2nd paragraph. &lt;em&gt;Italic&lt;/em&gt;, &lt;strong&gt;bold&lt;/strong&gt;, and &lt;code&gt;monospace&lt;/code&gt;. Itemized lists
+look like:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;this one&lt;/li&gt;
+  &lt;li&gt;that one&lt;/li&gt;
+  &lt;li&gt;the other one&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Note that — not considering the asterisk — the actual text
+content starts at 4-columns in.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Block quotes are
+written like so.&lt;/p&gt;
+
+  &lt;p&gt;They can span multiple paragraphs,
+if you like.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Use 3 dashes for an em-dash. Use 2 dashes for ranges (ex., “it’s all
+in chapters 12–14”). Three dots … will be converted to an ellipsis.
+Unicode is supported. ☺&lt;/p&gt;
+
+&lt;h3 id=&quot;an-h3-header&quot;&gt;An h3 header&lt;/h3&gt;
+
+&lt;p&gt;Here’s a numbered list:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;first item&lt;/li&gt;
+  &lt;li&gt;second item&lt;/li&gt;
+  &lt;li&gt;third item&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Note again how the actual text starts at 4 columns in (4 characters
+from the left side). Here’s a code sample:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;# Let me re-iterate ...
+for i in 1 .. 10 { do-something(i) }
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;As you probably guessed, indented 4 spaces. By the way, instead of
+indenting the block, you can use delimited blocks, if you like:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;define foobar() {
+    print &quot;Welcome to flavor country!&quot;;
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;(which makes copying &amp;amp; pasting easier). You can optionally mark the
+delimited block for Pandoc to syntax highlight it:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-python&quot;&gt;import time
+# Quick, count to ten!
+for i in range(10):
+    # (but not *too* quick)
+    time.sleep(0.5)
+    print i
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h4 id=&quot;an-h4-header&quot;&gt;An h4 header&lt;/h4&gt;
+
+&lt;p&gt;Now a nested list:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;First, get these ingredients:&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;carrots&lt;/li&gt;
+      &lt;li&gt;celery&lt;/li&gt;
+      &lt;li&gt;lentils&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Boil some water.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Dump everything in the pot and follow
+this algorithm:&lt;/p&gt;
+
+    &lt;pre&gt;&lt;code&gt;find wooden spoon
+uncover pot
+stir
+cover pot
+balance wooden spoon precariously on pot handle
+wait 10 minutes
+goto first step (or shut off burner when done)
+&lt;/code&gt;&lt;/pre&gt;
+
+    &lt;p&gt;Do not bump wooden spoon or it will fall.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Notice again how text always lines up on 4-space indents (including
+that last line which continues item 3 above).&lt;/p&gt;
+
+&lt;p&gt;Here’s a link to &lt;a href=&quot;http://foo.bar&quot;&gt;a website&lt;/a&gt;, to a &lt;a href=&quot;local-doc.html&quot;&gt;local
+doc&lt;/a&gt;, and to a &lt;a href=&quot;#an-h2-header&quot;&gt;section heading in the current
+doc&lt;/a&gt;. Here’s a footnote &lt;sup id=&quot;fnref:1&quot;&gt;&lt;a href=&quot;#fn:1&quot; class=&quot;footnote&quot; rel=&quot;footnote&quot; role=&quot;doc-noteref&quot;&gt;1&lt;/a&gt;&lt;/sup&gt;.&lt;/p&gt;
+
+&lt;p&gt;Tables can look like this:&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;size&lt;/th&gt;
+      &lt;th&gt;material&lt;/th&gt;
+      &lt;th&gt;color&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;9&lt;/td&gt;
+      &lt;td&gt;leather&lt;/td&gt;
+      &lt;td&gt;brown&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;10&lt;/td&gt;
+      &lt;td&gt;hemp&lt;/td&gt;
+      &lt;td&gt;natural&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;11&lt;/td&gt;
+      &lt;td&gt;glass&lt;/td&gt;
+      &lt;td&gt;transparent&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;Table: Shoes, their sizes, and what they’re made of.&lt;/p&gt;
+
+&lt;p&gt;A horizontal rule follows.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;Here’s a definition list:&lt;/p&gt;
+
+&lt;dl&gt;
+  &lt;dt&gt;apples&lt;/dt&gt;
+  &lt;dd&gt;Good for making applesauce.
+oranges&lt;/dd&gt;
+  &lt;dd&gt;Citrus!
+tomatoes&lt;/dd&gt;
+  &lt;dd&gt;There’s no “e” in tomatoe.&lt;/dd&gt;
+&lt;/dl&gt;
+
+&lt;p&gt;Again, text is indented 4 spaces. (Put a blank line between each
+term/definition pair to spread things out more.)&lt;/p&gt;
+
+&lt;p&gt;Here’s a “line block”:&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Line one&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Line too&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Line tree&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;and images can be specified like so:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/public/images/cat.jpg&quot; alt=&quot;example image&quot; title=&quot;An exemplary image&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;And note that you can backslash-escape any punctuation characters
+which you wish to be displayed literally, ex.: `foo`, *bar*, etc.&lt;/p&gt;
+&lt;div class=&quot;footnotes&quot; role=&quot;doc-endnotes&quot;&gt;
+  &lt;ol&gt;
+    &lt;li id=&quot;fn:1&quot;&gt;
+      &lt;p&gt;Footnote text goes here. &lt;a href=&quot;#fnref:1&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+  &lt;/ol&gt;
+&lt;/div&gt;
+</description>
+      <pubDate>Sat, 20 Jul 2024 12:00:00 +0200</pubDate>
+      <dc:date>2024-07-20T12:00:00+02:00</dc:date>
+    </item>
+    <item>
+      <title>Cleaning Up barf&#39;s Structure</title>
+      <link>https://jamesdietrich.website/posts/cleanup/</link>
+      <description>&lt;h1 id=&quot;cleaning-up-barfs-structure&quot;&gt;Cleaning Up barf’s Structure&lt;/h1&gt;
+
+&lt;p&gt;2023-10-09&lt;/p&gt;
+
+&lt;p&gt;Things probably look a little different around here. Both in terms of this demo site &lt;em&gt;and&lt;/em&gt; the core &lt;code&gt;barf&lt;/code&gt; files itself.&lt;/p&gt;
+
+&lt;p&gt;This project was always intended to be focused on Linux platforms. So, I’ve removed the included &lt;code&gt;barf_macos&lt;/code&gt; and &lt;code&gt;barf_openbsd&lt;/code&gt; files to keep the generator more streamlined. But have no fear! Instructions for both Mac and OpenBSD can still be found on the main blog:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;/macos&quot;&gt;Running &lt;code&gt;barf&lt;/code&gt; on MacOS&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;/openbsd&quot;&gt;Running &lt;code&gt;barf&lt;/code&gt; on OpenBSD&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;As for the “default” look of &lt;code&gt;barf&lt;/code&gt;, I’ve simplified things further. The total CSS styling now consists of only:&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;
+*{box-sizing:border-box;}
+body{font-family:sans-serif;margin:0 auto;max-width:650px;padding:1rem;}
+img{max-width:100%;}
+pre{overflow:auto;}
+&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;Users still have the ability to tweak things as much as they’d like, but the standard look should be more than enough for anyone just focusing on writing. Dark mode has also been dropped but is easily added by adding the following inside the &lt;code&gt;head&lt;/code&gt; tags:&lt;/p&gt;
+
+&lt;p&gt;```&lt;/p&gt;
+&lt;meta name=&quot;color-scheme&quot; content=&quot;dark light&quot; /&gt;
+
+&lt;p&gt;```&lt;/p&gt;
+
+&lt;p&gt;Hopefully these changes reduce the overall scope of the project, which was a main point made on the README originally!&lt;/p&gt;
+
+&lt;blockquote&gt;&lt;p&gt;
+Hello
+This is a quote with a &lt;a href=&quot;http://s01.de/~gottox&quot;&gt;link&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;br /&gt;
+&lt;em&gt;November 2023, Roskilde&lt;/em&gt; &lt;img src=&quot;/public/images/chestnut3.png&quot; style=&quot;max-height: 1em;&quot; /&gt;&lt;/p&gt;
+</description>
+      <pubDate>Mon, 09 Oct 2023 12:00:00 +0200</pubDate>
+      <dc:date>2023-10-09T12:00:00+02:00</dc:date>
+    </item>
+    <item>
+      <title>Running `barf` on OpenBSD</title>
+      <link>https://jamesdietrich.website/posts/openbsd/</link>
+      <description>&lt;h1 id=&quot;running-barf-on-openbsd&quot;&gt;Running &lt;code&gt;barf&lt;/code&gt; on OpenBSD&lt;/h1&gt;
+
+&lt;p&gt;2023-08-12&lt;/p&gt;
+
+&lt;p&gt;The &lt;code&gt;barf&lt;/code&gt; project was built on Linux and was catered towards Linux users. The core of the project will remain focused on Linux/GNU tools, but I also need to support OpenBSD since that is my personal operating system of choice.&lt;/p&gt;
+
+&lt;h2 id=&quot;download-packages&quot;&gt;Download Packages&lt;/h2&gt;
+
+&lt;p&gt;Along with your Markdown parser of choice (&lt;code&gt;barf&lt;/code&gt; assumes you will be using my version of &lt;a href=&quot;https://git.sr.ht/~bt/smu&quot;&gt;smu&lt;/a&gt;) you will also need to install the required packages on your OpenBSD system:&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;
+doas pkg_add rsync coreutils gsed cmake gcc
+&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;Then ensure that you alter all instances of &lt;code&gt;sed&lt;/code&gt; with &lt;code&gt;gsed&lt;/code&gt; in the core &lt;code&gt;barf&lt;/code&gt; file. (Or make an alias if you’d prefer not to alter the main file)&lt;/p&gt;
+
+&lt;p&gt;After that, everything should work perfectly fine when building!&lt;/p&gt;
+</description>
+      <pubDate>Sat, 12 Aug 2023 12:00:00 +0200</pubDate>
+      <dc:date>2023-08-12T12:00:00+02:00</dc:date>
+    </item>
+    <item>
+      <title>Supporting Basic Dark Mode</title>
+      <link>https://jamesdietrich.website/posts/dark-mode/</link>
+      <description>&lt;h1 id=&quot;supporting-basic-dark-mode&quot;&gt;Supporting Basic Dark Mode&lt;/h1&gt;
+
+&lt;p&gt;2023-03-07&lt;/p&gt;
+
+&lt;p&gt;The default &lt;code&gt;barf&lt;/code&gt; site generator now supports basic dark mode functionality. This has been achieved by including the standard &lt;code&gt;color-scheme&lt;/code&gt; meta tag in the core &lt;code&gt;header.html&lt;/code&gt; file:&lt;/p&gt;
+
+&lt;p&gt;```&lt;/p&gt;
+&lt;meta name=&quot;color-scheme&quot; content=&quot;dark light&quot; /&gt;
+
+&lt;p&gt;```&lt;/p&gt;
+
+&lt;p&gt;This change also ships with some minor updates to the default &lt;code&gt;blockquote&lt;/code&gt; design. You can see an example below:&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;This is a really &lt;em&gt;cool&lt;/em&gt; blockquote&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h2 id=&quot;minor-caveat&quot;&gt;Minor Caveat&lt;/h2&gt;
+
+&lt;p&gt;Unfortunately, Safari still has minor &lt;code&gt;ahref&lt;/code&gt; / link color issue when defaulting to browser dark mode. If this is a problem for your own build of &lt;code&gt;barf&lt;/code&gt;, take a look at a &lt;a href=&quot;https://bt.ht/safari-default-dark-mode/&quot;&gt;solution I wrote about here&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Personally, I can’t be bothered to add that extra code to this project. The Safari team needs to get their shit together and fix such a simple bug. Plus, you shouldn’t be using Safari anyway - it’s proprietary garbage.&lt;/p&gt;
+</description>
+      <pubDate>Tue, 07 Mar 2023 12:00:00 +0100</pubDate>
+      <dc:date>2023-03-07T12:00:00+01:00</dc:date>
+    </item>
+    <item>
+      <title>Running `barf` on MacOS</title>
+      <link>https://jamesdietrich.website/posts/macos/</link>
+      <description>&lt;h1 id=&quot;running-barf-on-macos&quot;&gt;Running &lt;code&gt;barf&lt;/code&gt; on MacOS&lt;/h1&gt;
+
+&lt;p&gt;2023-01-18&lt;/p&gt;
+
+&lt;p&gt;The &lt;code&gt;barf&lt;/code&gt; project was built on Linux and was catered towards Linux users. The core of the project will remain focused on Linux/GNU tools, but that doesn’t mean MacOS needs to be left out in the cold.&lt;/p&gt;
+
+&lt;p&gt;There are some very minor changes you’ll need to make to your default &lt;code&gt;sed&lt;/code&gt; and &lt;code&gt;date&lt;/code&gt; paths if you plan to run barf on MacOS.&lt;/p&gt;
+
+&lt;h2 id=&quot;download-packages&quot;&gt;Download Packages&lt;/h2&gt;
+
+&lt;p&gt;This walkthrough assumes that you already have &lt;a href=&quot;https://brew.sh/&quot;&gt;homebrew&lt;/a&gt; installed on your machine.&lt;/p&gt;
+
+&lt;p&gt;You will need to install the GNU versions of both &lt;code&gt;date&lt;/code&gt; and &lt;code&gt;sed&lt;/code&gt; in order to avoid breaking things when &lt;code&gt;barf&lt;/code&gt; tries to build.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;brew install coreutils
+brew install gnu-sed
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&quot;setting-gsed-and-gdate-as-default&quot;&gt;Setting &lt;code&gt;gsed&lt;/code&gt; and &lt;code&gt;gdate&lt;/code&gt; as Default&lt;/h2&gt;
+
+&lt;p&gt;Now run the following in a terminal shell:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;sudo ln -fs /opt/homebrew/bin/gsed /usr/local/bin/sed
+sudo ln -fs /opt/homebrew/bin/gdate /usr/local/bin/date
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;and add the following to your &lt;code&gt;.bash_profile&lt;/code&gt; file:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;export PATH=&quot;/usr/local/bin:$PATH&quot;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Reload your &lt;code&gt;bash&lt;/code&gt; instance and everything should work as intended!&lt;/p&gt;
+</description>
+      <pubDate>Wed, 18 Jan 2023 12:00:00 +0100</pubDate>
+      <dc:date>2023-01-18T12:00:00+01:00</dc:date>
+    </item>
+    <dc:date>2025-06-21T17:01:39+02:00</dc:date>
+  </channel>
+</rss>

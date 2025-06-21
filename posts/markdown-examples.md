@@ -1,254 +1,139 @@
-# Markdown Examples in barf
-
-2023-01-05
+# Markdown Examples in wruby
 
-This following was lifted from [https://github.com/karlb/smu](https://github.com/karlb/smu)
+2024-07-20
 
-`smu` Syntax
-============
+## An h2 header
 
-smu was started as a rewrite of
-[markdown](http://daringfireball.net/projects/markdown/) but became something
-more lightweight and consistent. It differs from [CommonMark](https://commonmark.org/) in the following ways:
+Paragraphs are separated by a blank line.
 
-* No support for _reference style links_
-* Stricter indentation rules for lists
-* Lists don't end paragraphs by themselves (blank line needed)
-* Horizontal rules (`<hr>`) must use `- - -` as syntax
-* Code fences have stricter syntax
+2nd paragraph. *Italic*, **bold**, and `monospace`. Itemized lists
+look like:
 
-Patches that increase the CommonMark compatibility are welcome as long as they don't increase the code complexity significantly.
+  * this one
+  * that one
+  * the other one
 
-This project is a fork of the [original smu](https://github.com/gottox/smu) by
-[Enno Boland (gottox)](https://eboland.de). The main differences to the
-original smu are:
+Note that --- not considering the asterisk --- the actual text
+content starts at 4-columns in.
 
-* Support for code fences
-* Improved [CommonMark](https://commonmark.org/) compatibility. E.g.
-  * Code blocks need four spaces indentation instead of three
-  * Skip empty lines at end of code blocks
-  * Ignore single spaces around code spans
-  * Keep HTML comments in output
-  * Improved spec compliance for lists
-  * Nesting code block in blockquotes works
-  * "Empty" lines in lists behave identically, no matter how much whitespace they contain
-  * No backslash escapes in code blocks
-  * Use first number as start number for ordered lists
-* Added a simple test suite to check for compliance and avoid regressions
+> Block quotes are
+> written like so.
+>
+> They can span multiple paragraphs,
+> if you like.
 
-Inline patterns
----------------
+Use 3 dashes for an em-dash. Use 2 dashes for ranges (ex., "it's all
+in chapters 12--14"). Three dots ... will be converted to an ellipsis.
+Unicode is supported. ☺
 
-There are several patterns you can use to highlight your text:
 
-* Emphasis
-  * Surround your text with `*` or `_` to get *emphasised* text:
-    	This *is* cool.
-    	This _is_ cool, too.
-  * Surround your text with `**` or `__` to get **strong** text:
-    	This **is** cool.
-    	This __is__ cool, too.
-  * Surround your text with `***` or `___` to get ***strong and emphasised*** text:
-    	This ***is*** cool.
-    	This ___is___ cool, too.
-  * But this example won't work as expected:
-    	***Hello** you*
-    This is a wontfix bug because it would make the source too complex.
-    Use this instead:
-    	***Hello*** *you*
 
-* inline Code
+### An h3 header
 
-  You can produce inline code by surrounding it with backticks.
+Here's a numbered list:
 
-  	Use `rm -rf /` if you're a N00b.
-  	Use ``rm -rf /`` if you're a N00b.
-  	Use ```rm -rf /``` if you're a N00b.
+ 1. first item
+ 2. second item
+ 3. third item
 
-  Double and triple backticks can be used if the code itself contains backticks.
+Note again how the actual text starts at 4 columns in (4 characters
+from the left side). Here's a code sample:
 
+    # Let me re-iterate ...
+    for i in 1 .. 10 { do-something(i) }
 
-Titles
-------
+As you probably guessed, indented 4 spaces. By the way, instead of
+indenting the block, you can use delimited blocks, if you like:
 
-Creating titles in smu is very easy. There are two different syntax styles. The
-first is underlining with at least three characters:
+~~~
+define foobar() {
+    print "Welcome to flavor country!";
+}
+~~~
 
-	Heading
-	=======
-	
-	Topic
-	-----
+(which makes copying & pasting easier). You can optionally mark the
+delimited block for Pandoc to syntax highlight it:
 
-This is very intuitive and self explaining. The resulting sourcecode looks like
-this:
+~~~python
+import time
+# Quick, count to ten!
+for i in range(10):
+    # (but not *too* quick)
+    time.sleep(0.5)
+    print i
+~~~
 
-	<h1>Heading</h1>
-	<h2>Topic</h2>
 
-Use the following prefixes if you don't like underlining:
 
-	# h1
-	## h2
-	### h3
-	#### h4
-	##### h5
-	###### h6
+#### An h4 header
 
-Links
------
+Now a nested list:
 
-The simplest way to define a link is with simple `<>`.
+ 1. First, get these ingredients:
 
-	<http://s01.de>
+      * carrots
+      * celery
+      * lentils
 
-You can do the same for E-Mail addresses:
+ 2. Boil some water.
 
-	<yourname@s01.de>
+ 3. Dump everything in the pot and follow
+    this algorithm:
 
-If you want to define a label for the url, you have to use a different syntax
+        find wooden spoon
+        uncover pot
+        stir
+        cover pot
+        balance wooden spoon precariously on pot handle
+        wait 10 minutes
+        goto first step (or shut off burner when done)
 
-	[smu - simple mark up](http://s01.de/~gottox/index.cgi/proj_smu)
+    Do not bump wooden spoon or it will fall.
 
-The resulting HTML-Code
+Notice again how text always lines up on 4-space indents (including
+that last line which continues item 3 above).
 
-	<a href="http://s01.de/~gottox/index.cgi/proj_smu">smu - simple mark up</a></p>
+Here's a link to [a website](http://foo.bar), to a [local
+doc](local-doc.html), and to a [section heading in the current
+doc](#an-h2-header). Here's a footnote [^1].
 
-Lists
------
+[^1]: Footnote text goes here.
 
-Defining lists is very straightforward:
+Tables can look like this:
 
-	* Item 1
-	* Item 2
-	* Item 3
+|size|material|color|
+|----|--------|-----|
+|9   |leather |brown|
+|10  |hemp    |natural|
+|11  |glass   |transparent|
 
-Result:
+Table: Shoes, their sizes, and what they're made of.
 
-	<ul>
-	<li>Item 1</li>
-	<li>Item 2</li>
-	<li>Item 3</li>
-	</ul>
+A horizontal rule follows.
 
-Defining ordered lists is also very easy:
+***
 
-	1. Item 1
-	2. Item 2
-	3. Item 3
+Here's a definition list:
 
-Only the first number in a list is meaningful. All following list items are
-continously counted. If you want a list starting at 2, you could write:
+apples
+  : Good for making applesauce.
+oranges
+  : Citrus!
+tomatoes
+  : There's no "e" in tomatoe.
 
-	2. Item 1
-	2. Item 2
-	2. Item 3
+Again, text is indented 4 spaces. (Put a blank line between each
+term/definition pair to spread things out more.)
 
-and get the following HTML which will render with the numbers 2, 3, 4:
+Here's a "line block":
 
-	<ol start="2">
-	<li>Item 1</li>
-	<li>Item 2</li>
-	<li>Item 3</li>
-	</ol>
+| Line one
+|   Line too
+| Line tree
 
-Code & Blockquote
------------------
+and images can be specified like so:
 
-Use the `> ` as a line prefix for defining blockquotes. Blockquotes are
-interpreted as well. This makes it possible to embed links, headings and even
-other quotes into a quote:
+![example image](/public/images/cat.jpg "An exemplary image")
 
-	> Hello
-	> This is a quote with a [link](http://s01.de/~gottox)
-
-Result:
-	<blockquote><p>
-	Hello
-	This is a quote with a <a href="http://s01.de/~gottox">link</a></p>
-	</blockquote>
-
-
-You can define a code block with a leading Tab or with __4__ leading spaces
-
-		this.is(code)
-	
-	    this.is(code, too)
-
-Result:
-	<pre><code>this.is(code)</code></pre>
-	<pre><code>this.is(code, too)
-	</code></pre>
-
-Please note that you can't use HTML or smu syntax in a code block.
-
-Another way to write code blocks is to use code fences:
-
-	```json
-	{"some": "code"}
-	```
-
-This has two advantages:
-* The optional language identifier will be turned into a `language-` class name
-* You can keep the original indentation which helps when doing copy & paste
-
-Tables
-------
-
-Tables can be generated with the following syntax:
-
-	| Heading1 | Heading2 |
-	| -------- | -------- |
-	| Cell 1   | Cell2    |
-
-Aligning the columns make the input nicer to read, but is not necessary to get
-correct table output. You could just write
-
-	| Heading1 | Heading2 |
-	| --- | --- |
-	| Cell 1 | Cell2 |
-
-To align the content of table cells, use `|:--|` for left, `|--:|` for right
-and `|:--:|` for centered alignment in the row which separates the header from
-the table body.
-
-	| Heading1 | Heading2 | Heading3 |
-	| :------- | :------: | -------: |
-	| Left     | Center   | Right    |
-
-Other interesting stuff
------------------------
-
-* to insert a horizontal rule simple add `- - -` into an empty line:
-
-  	Hello
-  	- - -
-  	Hello2
-
-  Result:
-  	<p>
-  	Hello
-  	<hr />
-  	
-  	Hello2</p>
-
-* Any ASCII punctuation character may escaped by precedeing them with a
-  backslash to avoid them being interpreted:
-
-  	!"#$%&'()*+,-./:;<=>?@[]^_`{|}~\
-
-* To force a linebreak simple add two spaces to the end of the line:
-
-  	No linebreak
-  	here.
-  	But here is  
-  	one.
-
-embed HTML
-----------
-
-You can include arbitrary HTML code in your documents. The HTML will be
-passed through to the resulting document without modification. This is a good
-way to work around features that are missing in smu. If you don't want this
-behaviour, use the `-n` flag when executing smu to stricly escape the HTML
-tags.
+And note that you can backslash-escape any punctuation characters
+which you wish to be displayed literally, ex.: \`foo\`, \*bar\*, etc.
