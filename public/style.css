@@ -4,18 +4,21 @@
 body {
     font-family: "Verdana", sans-serif;
     line-height: 1.4;
-    font-size: 13px;
+    font-size: 20px;
     margin: 0 auto;
     max-width: 470px;
     padding: 0 10px 10px;
 }
-h1{font-size:18px;margin-top:1em;}
+h1 {
+    font-size: 18px;
+    margin-top: 1em;
+}
 h2,
 h3,
 h4,
 h5,
 h6 {
-  font-size: 15px;
+    font-size: 15px;
     margin: 2em 0 0;
 }
 blockquote {
@@ -24,9 +27,9 @@ blockquote {
     padding: 2px 8px;
 }
 blockquote p {
-  font-style: italic;
-  margin: 0;
-  padding: 0;
+    font-style: italic;
+    margin: 0;
+    padding: 0;
 }
 img {
     max-width: 100%;
@@ -41,11 +44,8 @@ table {
     width: 100%;
 }
 nav {
-  border-bottom: 1px solid;
-  padding: 10px 0;
-}
-nav a:last-of-type {
-  float: right;
+    border-bottom: 1px solid;
+    padding: 10px 0;
 }
 #menu,
 .posts {
@@ -64,17 +64,17 @@ nav a:last-of-type {
     margin-right: 8px;
 }
 figure {
-  margin: 3em 0;
+    margin: 3em 0;
 }
 figure img {
-  width: 100%;
+    width: 100%;
 }
 figcaption {
     font-size: 90%;
 }
 footer {
-  border-top: 1px solid;
-  margin: 2em 0;
+    border-top: 1px solid;
+    margin: 2em 0;
 }
 .footnotes {
     font-size: 90%;
