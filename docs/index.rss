@@ -8,7 +8,7 @@
     <title>James Dietrich RSS Feed</title>
     <link>https://jamesdietrich.website</link>
     <description>The official RSS Feed for https://jamesdietrich.website</description>
-    <pubDate>Sat, 21 Jun 2025 17:28:27 +0200</pubDate>
+    <pubDate>Sat, 21 Jun 2025 17:30:58 +0200</pubDate>
     <item>
       <title>Exploring Futurama: A Dive into the World of Tomorrow</title>
       <link>https://jamesdietrich.website/posts/futurama/</link>
@@ -401,6 +401,6 @@ sudo ln -fs /opt/homebrew/bin/gdate /usr/local/bin/date
       <pubDate>Wed, 18 Jan 2023 12:00:00 +0100</pubDate>
       <dc:date>2023-01-18T12:00:00+01:00</dc:date>
     </item>
-    <dc:date>2025-06-21T17:28:27+02:00</dc:date>
+    <dc:date>2025-06-21T17:30:58+02:00</dc:date>
   </channel>
 </rss>
