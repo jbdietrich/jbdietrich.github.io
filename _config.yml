@@ -16,6 +16,7 @@ files:
   root_index: "index.md"
   posts_index: "pages/posts.md"
   rss: "docs/index.rss"
+  cname: "CNAME"
 
 misc:
   post_count: 5

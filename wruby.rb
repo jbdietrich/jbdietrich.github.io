@@ -24,6 +24,7 @@ footer_file = config['files']['footer']
 root_index_file = config['files']['root_index']
 posts_index_file = config['files']['posts_index']
 rss_file = config['files']['rss']
+cname_file = config['files']['cname']
 
 post_count = config['misc']['post_count']
 
@@ -130,6 +131,10 @@ def generate_rss(posts, rss_file, author_name, site_name, site_url, posts_dir)
   File.write(rss_file, rss)
 end
 
+def copy_cname(cname_file, output_dir)
+  FileUtils.cp(cname_file, output_dir)
+end
+
 # Process header, posts, pages, etc.
 header_content = File.read(header_file)
 
@@ -140,5 +145,6 @@ generate_index(posts, header_content, footer_content, root_index_file, post_coun
 generate_full_posts_list(posts, header_content, footer_content, posts_index_file, output_dir, posts_dir)
 FileUtils.cp_r(public_dir, output_dir)
 generate_rss(posts, rss_file, author_name, site_name, site_url, posts_dir)
+copy_cname(cname_file, output_dir)
 
 puts "Blog built successfully in '#{output_dir}' folder. Have a great day!"
