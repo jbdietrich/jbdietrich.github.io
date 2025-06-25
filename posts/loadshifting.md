@@ -45,7 +45,7 @@ I have a Bosch dishwasher (model number SMV4EDX17E/10 to be exact). It turns out
 
     <img src="https://imagedelivery.net/GEsI1Cps_TzlnwLLGalXRQ/9d7f9b37-b3a0-461a-db0a-ed8d11b21200/public" style="margin: auto; display: block; max-width: 300px;" />
 
-2. Set up an account on the [Home Connect Developer Portal](https://developer.home-connect.com). There I registered an register application (in this case). This gave me some values that are required to authorize requests: a "Client ID", "Client Secret", and "Redirect URI".
+2. Set up an account on the [Home Connect Developer Portal](https://developer.home-connect.com). There I registered an application (in this case a local Python script). This gave me some values that are required to authorize requests: a "Client ID", "Client Secret", and "Redirect URI".
 
    <img src="https://imagedelivery.net/GEsI1Cps_TzlnwLLGalXRQ/ddeb296e-0970-4800-3bf2-64cb9d149700/public" style="margin: auto; display: block;" />
 
