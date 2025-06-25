@@ -8,7 +8,199 @@
     <title>James Dietrich RSS Feed</title>
     <link>https://jamesdietrich.website</link>
     <description>The official RSS Feed for https://jamesdietrich.website</description>
-    <pubDate>Tue, 24 Jun 2025 13:52:39 +0200</pubDate>
+    <pubDate>Tue, 24 Jun 2025 17:18:07 +0200</pubDate>
+    <item>
+      <title>Load shifting my dishwasher in 50(ish) lines of Python</title>
+      <link>https://jamesdietrich.website/posts/loadshifting/</link>
+      <description>&lt;h1 id=&quot;load-shifting-my-dishwasher-in-50ish-lines-of-python&quot;&gt;Load shifting my dishwasher in 50(ish) lines of Python&lt;/h1&gt;
+
+&lt;p&gt;2025-06-24&lt;/p&gt;
+
+&lt;h2 id=&quot;tldr&quot;&gt;tl;dr&lt;/h2&gt;
+
+&lt;p&gt;Recently at &lt;a href=&quot;https://electricitymaps.com&quot;&gt;Electricity Maps&lt;/a&gt; we released &lt;a href=&quot;https://portal.electricitymaps.com/docs/api#carbon-aware-scheduler&quot;&gt;an API endpoint&lt;/a&gt; that makes it easy to figure out how best to consume electricity. You provide the API with information about when and where you’re planning to use electricity and the system figures out how to optimize for things like:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;the least amount of CO2 emitted&lt;/li&gt;
+  &lt;li&gt;the largest share of renewable energy&lt;/li&gt;
+  &lt;li&gt;the smallest net load on the electricity grid&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Within the company we’ve used the API to schedule some of our cloud compute workloads intelligently. That is super cool! But in my view this techonology’s real potential lies in the fact that it’s applicable to all types of consumption: from datacenters to EVs to humble home appliances. This post describes how I put that idea to the test by hooking it up to my own dishwasher.&lt;/p&gt;
+
+&lt;h2 id=&quot;on-load-shifting&quot;&gt;On load shifting&lt;/h2&gt;
+
+&lt;p&gt;Adjusting when and where you consume electricity in response to information about the electricity system is known as “load shifting”. Exactly how you shift your consumption depends on what you care about. For example, if you want to reduce cost, you’ll start your consumption when when prices are lowest. If you care most about grid stability, you may time your usage to match the lowest demand on your local grid. Finally, if you care about reducing emissions how much of your electricity comes from rewewable sources.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Planned electricity consumption that you’re able to move in time or space. Not all consumption can be shifted (you need to run your refrigerator at all times and you need your lights on when it’s dark)&lt;/li&gt;
+  &lt;li&gt;Some objective you want to optimize for (e.g. reducing carbon emissions)&lt;/li&gt;
+  &lt;li&gt;A good forecast of the information you need to optimize for your objective (e.g. what will the carbon intensity of electricity be)&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;on-dishwashers&quot;&gt;On dishwashers&lt;/h2&gt;
+
+&lt;p&gt;At the scale of my household the easiest thing to adjust is the dishwasher’s&lt;sup&gt;1&lt;/sup&gt; electricity consumption. This is because my dishwasher usage is chillingly predictable: I fill it every evening after dinner leaving a 10 hour window in which it can run before morning.&lt;/p&gt;
+
+&lt;p&gt;Additionally, like most appliances built in the last decade, the dishwasher can controlled from the internet. It’s not clear whether this is a Good Thing™️ on balance but it’s helpful for load shifting!&lt;/p&gt;
+
+&lt;p&gt;It adds up to the&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;✅ Planned electricity consumption that I’m able to move in time -&amp;gt; running the dishwasher&lt;/li&gt;
+  &lt;li&gt;✅ Objective to optimize for -&amp;gt; reducing carbon emissions&lt;/li&gt;
+  &lt;li&gt;✅ A good forecast -&amp;gt; 🪄 from the Electricity Maps API&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;on-load-shifting-my-dishwasher&quot;&gt;On load shifting my dishwasher&lt;/h2&gt;
+
+&lt;p&gt;It only took me a couple of hours to connect my dishwasher to the Electricity Maps scheduling API. The following is a rough outline of the steps I took to do it.&lt;/p&gt;
+
+&lt;h3 id=&quot;setting-up-the-plumbing&quot;&gt;Setting up the plumbing&lt;/h3&gt;
+
+&lt;p&gt;It turns out that I have a Bosch dishwasher (model number SMV4EDX17E/10). Bosch manages interactions with its smart appliances through a platform called Home Connect, which offers &lt;a href=&quot;https://api-docs.home-connect.com&quot;&gt;a well-documented REST API&lt;/a&gt;. However, because the API uses OAuth2, I decided to use the &lt;a href=&quot;https://github.com/DavidMStraub/homeconnect&quot;&gt;homeconnect&lt;/a&gt; Python package to make authorization easier.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Download the &lt;a href=&quot;https://www.home-connect.com/us/en&quot;&gt;Home Connect&lt;/a&gt; app, set up an account, and link the account to my dishwasher (my wife had previously connected the dishwasher to our home network). I was able to see the dishwasher in the app once once my account was linked.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://imagedelivery.net/GEsI1Cps_TzlnwLLGalXRQ/9d7f9b37-b3a0-461a-db0a-ed8d11b21200/public&quot; alt=&quot;Home Connect App&quot; /&gt;&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;Set up an account on the &lt;a href=&quot;https://developer.home-connect.com&quot;&gt;Home Connect Developer Portal&lt;/a&gt;. There I registered an register application (in this case). This gave me some values that are required to authorize requests: a “Client ID”, “Client Secret”, and “Redirect URL”.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Write some code to authenticate and interact with the Home Connect API. I used . First, I created a &lt;code&gt;.env&lt;/code&gt; file with the secrets I needed and then and a Python script to load the secrets into memory:&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;code&gt;.env&lt;/code&gt;
+&lt;code&gt;
+OAUTHLIB_INSECURE_TRANSPORT=1 # necessary to allow the OAuth flow to use an http app locally
+HC_CLIENT_ID=id_from_developer_portal
+HC_CLIENT_SECRET=secret_from_developer_portal
+HC_REDIRECT_URL=http://localhost:8000
+EMAPS_TOKEN=api_token_from_electricity_maps # get an API token at https://portal.electricitymaps.com
+&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;config.py&lt;/code&gt;
+```
+from dotenv import load_dotenv
+import os&lt;/p&gt;
+
+&lt;p&gt;load_dotenv()&lt;/p&gt;
+
+&lt;p&gt;HC_CLIENT_ID = os.getenv(“HC_CLIENT_ID”)
+HC_CLIENT_SECRET = os.getenv(“HC_CLIENT_SECRET”)
+HC_REDIRECT_URI = os.getenv(“HC_REDIRECT_URI”)
+EMAPS_TOKEN = os.getenv(“EMAPS_TOKEN”)
+```&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Authorize my local Python script. First, I needed e function that returns a &lt;code&gt;HomeConnect&lt;/code&gt; object for interacting with the Home Connect API, including the auth flow:&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;```
+from config import HC_CLIENT_ID, HC_CLIENT_SECRET, HC_REDIRECT_URI
+from homeconnect import HomeConnect
+# …&lt;/p&gt;
+
+&lt;p&gt;def get_home_connect():
+    return HomeConnect(HC_CLIENT_ID, HC_CLIENT_SECRET, HC_REDIRECT_URI)
+```&lt;/p&gt;
+
+&lt;p&gt;I also needed a function that produces URL that I can use to authorize the app. The function also redirects to a local server so I can read the auth code:&lt;/p&gt;
+
+&lt;p&gt;```
+def get_auth_token():
+    hc = get_home_connect()
+    print(
+        f”Visit the following URL in your browser to get the auth result: {hc.get_authurl()}”
+    )&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;port = 8000
+server_address = (&quot;&quot;, port)
+httpd = HTTPServer(server_address, SimpleHTTPRequestHandler)
+httpd.serve_forever() ```
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;![]&lt;/p&gt;
+
+&lt;p&gt;Finally, a function that will store the authorized token in a local file for future calls to the API.&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;
+def save_auth_token(auth_result):
+    hc = get_home_connect()
+    hc.get_token(auth_result)
+    print(&quot;Updated auth token in homeconnect_oauth_token.json&quot;)
+&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;The
+### Using the Electricity Maps API to schedule the dishwasher&lt;/p&gt;
+
+&lt;p&gt;Once I was able to talk to the Home Connect API, the&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Ask the Electricity Maps API to using the carbon aware scheduler API.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;```
+from config import EMAPS_TOKEN
+import requests
+# …&lt;/p&gt;
+
+&lt;p&gt;METRIC_MAPPING = {
+    “carbon-intensity”: “flow-traced_carbon_intensity”,
+    “renewable-share”: “flow-traced_renewable_share”,
+    “net-load”: “net-load”,
+}&lt;/p&gt;
+
+&lt;p&gt;def get_start_time(window_start, window_end, optimization_metric=”carbon-intensity”):
+    headers = {“auth-token”: EMAPS_TOKEN}
+    data = {
+        “duration”: “PT4H”,  # Eco cycle takes around 4 hours
+        “startWindow”: window_start,
+        “endWindow”: window_end,
+        “locations”: [“DK-DK1”],  # My EMaps zone, see https://portal.electricitymaps.com/docs/getting-started#geographical-coverage
+        “optimizationMetric”: METRIC_MAPPING[optimization_metric],
+    }
+    r = requests.post(
+        “https://api.electricitymap.org/beta/carbon-aware-scheduler”,
+        headers=headers,
+        data=data,
+    )
+    start_time = datetime.fromisoformat(r.json()[“optimalStartTime”])
+    print(
+        f”To optimize for {‘ ‘.join(optimization_metric.split(‘-‘))}, scheduling dishwasher to run at {start_time.strftime(‘%A, %B %d, %Y at %I:%M %p’)}”
+    )&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;return start_time ```
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Find a time to&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;next-steps&quot;&gt;Next steps&lt;/h2&gt;
+
+&lt;p&gt;Ultimately was. I wanted to see whether it was&lt;/p&gt;
+
+&lt;h2 id=&quot;conclusion&quot;&gt;Conclusion&lt;/h2&gt;
+
+&lt;p&gt;I published the code for this post to GitHub here. It’s encouraging to see how easy it is to get going. There are a lot of caveats here:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;How big a difference does this actually make? There’&lt;/li&gt;
+  &lt;li&gt;What about measurement? Shouldn’t&lt;/li&gt;
+  &lt;li&gt;Measurement&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;These&lt;/p&gt;
+</description>
+      <pubDate>Tue, 24 Jun 2025 12:00:00 +0200</pubDate>
+      <dc:date>2025-06-24T12:00:00+02:00</dc:date>
+    </item>
     <item>
       <title>Exploring Futurama: A Dive into the World of Tomorrow</title>
       <link>https://jamesdietrich.website/posts/futurama/</link>
@@ -401,6 +593,6 @@ sudo ln -fs /opt/homebrew/bin/gdate /usr/local/bin/date
       <pubDate>Wed, 18 Jan 2023 12:00:00 +0100</pubDate>
       <dc:date>2023-01-18T12:00:00+01:00</dc:date>
     </item>
-    <dc:date>2025-06-24T13:52:39+02:00</dc:date>
+    <dc:date>2025-06-24T17:18:07+02:00</dc:date>
   </channel>
 </rss>
