@@ -8,7 +8,7 @@
     <title>James Dietrich RSS Feed</title>
     <link>https://jamesdietrich.website</link>
     <description>The official RSS Feed for https://jamesdietrich.website</description>
-    <pubDate>Wed, 25 Jun 2025 22:00:59 +0200</pubDate>
+    <pubDate>Wed, 25 Jun 2025 22:12:43 +0200</pubDate>
     <item>
       <title>Load shifting my dishwasher in 50(ish) lines of Python</title>
       <link>https://jamesdietrich.website/posts/loadshifting/</link>
@@ -246,7 +246,7 @@
 
 &lt;p&gt;It’s also &lt;a href=&quot;https://www.linkedin.com/feed/update/urn:li:activity:7341836147959996416?commentUrn=urn%3Ali%3Acomment%3A%28activity%3A7341836147959996416%2C7342102791303163905%29&amp;amp;replyUrn=urn%3Ali%3Acomment%3A%28activity%3A7341836147959996416%2C7342880249270927360%29&amp;amp;dashCommentUrn=urn%3Ali%3Afsd_comment%3A%287342102791303163905%2Curn%3Ali%3Aactivity%3A7341836147959996416%29&amp;amp;dashReplyUrn=urn%3Ali%3Afsd_comment%3A%287342880249270927360%2Curn%3Ali%3Aactivity%3A7341836147959996416%29&quot;&gt;fair to question&lt;/a&gt; the real impact of load shifting. At Electricity Maps we’ve learned a lot about the topic, particularly in the context of data center operations. We even have &lt;a href=&quot;https://ww2.electricitymaps.com/webinars/webinar-carbon-aware-it?utm_source=linkedin&amp;amp;utm_medium=social&amp;amp;utm_campaign=it-webinar-reminder&quot;&gt;a webinar&lt;/a&gt; in which we dive deep into the topic. The good news is that there is a scale at which load shifting activities make a difference to grid operations (this brings with it &lt;a href=&quot;https://es.catapult.org.uk/insight/the-emerging-ev-overnight-demand-peak-claire-rowland/&quot;&gt;its own consequences&lt;/a&gt;).&lt;/p&gt;
 
-&lt;p&gt;Putting these considerations aside, what encourages me is how &lt;em&gt;simple&lt;/em&gt; it is to build an API integration on top of what is an increasingly complex electricity system. It’s true that as more data about the electricity system - especially forecasts - become available and as more flexibile consumption (e.g. EVs, battery storage) is added to the grid, there are more opportunities to optimize. The key, though, is the quality and simplicity of the interfaces available to us: we won’t unlock optmization potential unless we can interact with the electricity system easily and reliably.&lt;/p&gt;
+&lt;p&gt;Putting these considerations aside, what encourages me is how &lt;em&gt;simple&lt;/em&gt; it is to build an API integration on top of what is an increasingly complex electricity system. It’s true that as more data about the electricity system - especially forecasts - become available and as more flexibile consumption (e.g. EVs, battery storage) is added to the grid, there are more opportunities to optimize. The key, though, is the quality and simplicity of the interfaces available to us: we won’t unlock optimization potential unless we can interact with the electricity system easily and reliably.&lt;/p&gt;
 
 &lt;h2 id=&quot;resources&quot;&gt;Resources&lt;/h2&gt;
 
@@ -263,6 +263,6 @@
       <pubDate>Wed, 25 Jun 2025 12:00:00 +0200</pubDate>
       <dc:date>2025-06-25T12:00:00+02:00</dc:date>
     </item>
-    <dc:date>2025-06-25T22:00:59+02:00</dc:date>
+    <dc:date>2025-06-25T22:12:43+02:00</dc:date>
   </channel>
 </rss>
