@@ -8,7 +8,7 @@
     <title>James Dietrich RSS Feed</title>
     <link>https://jamesdietrich.website</link>
     <description>The official RSS Feed for https://jamesdietrich.website</description>
-    <pubDate>Wed, 25 Jun 2025 19:45:10 +0200</pubDate>
+    <pubDate>Wed, 25 Jun 2025 19:52:13 +0200</pubDate>
     <item>
       <title>Load shifting my dishwasher in 50(ish) lines of Python</title>
       <link>https://jamesdietrich.website/posts/loadshifting/</link>
@@ -64,12 +64,12 @@
   &lt;li&gt;
     &lt;p&gt;Download the &lt;a href=&quot;https://www.home-connect.com/us/en&quot;&gt;Home Connect&lt;/a&gt; app, set up an account, and link the account to my dishwasher (my wife had previously connected the dishwasher to our home network). I was able to see the dishwasher in the app once once my account was linked.&lt;/p&gt;
 
-    &lt;p&gt;&lt;img src=&quot;https://imagedelivery.net/GEsI1Cps_TzlnwLLGalXRQ/9d7f9b37-b3a0-461a-db0a-ed8d11b21200/public&quot; width=&quot;20%&quot; height=&quot;20%&quot; style=&quot;margin: auto; display: block;&quot; /&gt;&lt;/p&gt;
+    &lt;p&gt;&lt;img src=&quot;https://imagedelivery.net/GEsI1Cps_TzlnwLLGalXRQ/9d7f9b37-b3a0-461a-db0a-ed8d11b21200/public&quot; style=&quot;margin: auto; display: block;&quot; /&gt;&lt;/p&gt;
   &lt;/li&gt;
   &lt;li&gt;
     &lt;p&gt;Set up an account on the &lt;a href=&quot;https://developer.home-connect.com&quot;&gt;Home Connect Developer Portal&lt;/a&gt;. There I registered an register application (in this case). This gave me some values that are required to authorize requests: a “Client ID”, “Client Secret”, and “Redirect URL”.&lt;/p&gt;
 
-    &lt;p&gt;&lt;img src=&quot;https://imagedelivery.net/GEsI1Cps_TzlnwLLGalXRQ/ddeb296e-0970-4800-3bf2-64cb9d149700/public&quot; width=&quot;40%&quot; height=&quot;40%&quot; style=&quot;margin: auto; display: block;&quot; /&gt;&lt;/p&gt;
+    &lt;p&gt;&lt;img src=&quot;https://imagedelivery.net/GEsI1Cps_TzlnwLLGalXRQ/ddeb296e-0970-4800-3bf2-64cb9d149700/public&quot; style=&quot;margin: auto; display: block;&quot; /&gt;&lt;/p&gt;
   &lt;/li&gt;
   &lt;li&gt;
     &lt;p&gt;Write some code to authenticate and interact with the Home Connect API. I used . First, I created a &lt;code&gt;.env&lt;/code&gt; file with the secrets I needed and then and a Python script to load the secrets into memory:&lt;/p&gt;
@@ -147,7 +147,7 @@
      127.0.0.1 - - [25/Jun/2025 11:36:00] &quot;GET /?code=xxx&amp;amp;state=xxx&amp;amp;grant_type=authorization_code HTTP/1.1&quot; 200
  &lt;/pre&gt;
 
-    &lt;p&gt;&lt;img src=&quot;https://imagedelivery.net/GEsI1Cps_TzlnwLLGalXRQ/1b504e8b-83bf-4148-1f28-7a0e574f3300/public&quot; width=&quot;40%&quot; height=&quot;40%&quot; style=&quot;margin: auto; display: block;&quot; /&gt;&lt;/p&gt;
+    &lt;p&gt;&lt;img src=&quot;https://imagedelivery.net/GEsI1Cps_TzlnwLLGalXRQ/1b504e8b-83bf-4148-1f28-7a0e574f3300/public&quot; style=&quot;margin: auto; display: block;&quot; /&gt;&lt;/p&gt;
 
     &lt;pre&gt;
      ~/code/loadshifting-dishes [main] 🧨 uv run hc.py --save-auth-token &quot;http://localhost:8000/?code=xxx&amp;amp;&amp;amp;state=456XYZ&amp;amp;grant_type=authorization_code&quot;
@@ -236,7 +236,7 @@
  To optimize for carbon intensity, scheduling dishwasher to run at Thursday, June 26, 2025 at 02:00 AM
  &lt;/pre&gt;
 
-    &lt;p&gt;&lt;img src=&quot;https://imagedelivery.net/GEsI1Cps_TzlnwLLGalXRQ/f62adb86-5c02-4c36-881a-1c7597d5a000/public&quot; width=&quot;20%&quot; height=&quot;20%&quot; style=&quot;margin: auto; display: block;&quot; /&gt;&lt;/p&gt;
+    &lt;p&gt;&lt;img src=&quot;https://imagedelivery.net/GEsI1Cps_TzlnwLLGalXRQ/f62adb86-5c02-4c36-881a-1c7597d5a000/public&quot; style=&quot;margin: auto; display: block;&quot; /&gt;&lt;/p&gt;
   &lt;/li&gt;
 &lt;/ol&gt;
 
@@ -263,6 +263,6 @@
       <pubDate>Wed, 25 Jun 2025 12:00:00 +0200</pubDate>
       <dc:date>2025-06-25T12:00:00+02:00</dc:date>
     </item>
-    <dc:date>2025-06-25T19:45:10+02:00</dc:date>
+    <dc:date>2025-06-25T19:52:13+02:00</dc:date>
   </channel>
 </rss>

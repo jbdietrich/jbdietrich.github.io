@@ -43,11 +43,11 @@ I have a Bosch dishwasher (model number SMV4EDX17E/10 to be exact). It turns out
 
 1. Download the [Home Connect](https://www.home-connect.com/us/en) app, set up an account, and link the account to my dishwasher (my wife had previously connected the dishwasher to our home network). I was able to see the dishwasher in the app once once my account was linked.
 
-    <img src="https://imagedelivery.net/GEsI1Cps_TzlnwLLGalXRQ/9d7f9b37-b3a0-461a-db0a-ed8d11b21200/public" width="20%" height="20%" style="margin: auto; display: block;"/>
+    <img src="https://imagedelivery.net/GEsI1Cps_TzlnwLLGalXRQ/9d7f9b37-b3a0-461a-db0a-ed8d11b21200/public" style="margin: auto; display: block;"/>
 
 2. Set up an account on the [Home Connect Developer Portal](https://developer.home-connect.com). There I registered an register application (in this case). This gave me some values that are required to authorize requests: a "Client ID", "Client Secret", and "Redirect URL".
 
-   <img src="https://imagedelivery.net/GEsI1Cps_TzlnwLLGalXRQ/ddeb296e-0970-4800-3bf2-64cb9d149700/public" width="40%" height="40%" style="margin: auto; display: block;" />
+   <img src="https://imagedelivery.net/GEsI1Cps_TzlnwLLGalXRQ/ddeb296e-0970-4800-3bf2-64cb9d149700/public" style="margin: auto; display: block;" />
 
 3. Write some code to authenticate and interact with the Home Connect API. I used . First, I created a `.env` file with the secrets I needed and then and a Python script to load the secrets into memory:
 
@@ -122,7 +122,7 @@ I have a Bosch dishwasher (model number SMV4EDX17E/10 to be exact). It turns out
         127.0.0.1 - - [25/Jun/2025 11:36:00] "GET /?code=xxx&state=xxx&grant_type=authorization_code HTTP/1.1" 200
     </pre>
 
-    <img src="https://imagedelivery.net/GEsI1Cps_TzlnwLLGalXRQ/1b504e8b-83bf-4148-1f28-7a0e574f3300/public" width="40%" height="40%" style="margin: auto; display: block;" />
+    <img src="https://imagedelivery.net/GEsI1Cps_TzlnwLLGalXRQ/1b504e8b-83bf-4148-1f28-7a0e574f3300/public" style="margin: auto; display: block;" />
 
     <pre>
         ~/code/loadshifting-dishes [main] 🧨 uv run hc.py --save-auth-token "http://localhost:8000/?code=xxx&&state=456XYZ&grant_type=authorization_code"
@@ -203,7 +203,7 @@ Once I was able to talk to the Home Connect API, I had to:
     To optimize for carbon intensity, scheduling dishwasher to run at Thursday, June 26, 2025 at 02:00 AM
     </pre>
 
-    <img src="https://imagedelivery.net/GEsI1Cps_TzlnwLLGalXRQ/f62adb86-5c02-4c36-881a-1c7597d5a000/public" width="20%" height="20%" style="margin: auto; display: block;" />
+    <img src="https://imagedelivery.net/GEsI1Cps_TzlnwLLGalXRQ/f62adb86-5c02-4c36-881a-1c7597d5a000/public" style="margin: auto; display: block;" />
 
 ## Conclusions and next steps
 
