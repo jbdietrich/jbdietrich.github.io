@@ -8,7 +8,7 @@
     <title>James Dietrich RSS Feed</title>
     <link>https://jamesdietrich.website</link>
     <description>The official RSS Feed for https://jamesdietrich.website</description>
-    <pubDate>Wed, 25 Jun 2025 20:10:29 +0200</pubDate>
+    <pubDate>Wed, 25 Jun 2025 20:12:39 +0200</pubDate>
     <item>
       <title>Load shifting my dishwasher in 50(ish) lines of Python</title>
       <link>https://jamesdietrich.website/posts/loadshifting/</link>
@@ -263,6 +263,6 @@
       <pubDate>Wed, 25 Jun 2025 12:00:00 +0200</pubDate>
       <dc:date>2025-06-25T12:00:00+02:00</dc:date>
     </item>
-    <dc:date>2025-06-25T20:10:29+02:00</dc:date>
+    <dc:date>2025-06-25T20:12:39+02:00</dc:date>
   </channel>
 </rss>
